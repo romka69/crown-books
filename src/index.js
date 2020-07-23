@@ -3,6 +3,8 @@ import React from "react"
 
 import App from './App'
 
+import "./index.css"
+
 const book = {
   "Title": "The Adventures of Tom Sawyer",
   "Annotation": "An 1876 novel about a young boy growing up along the Mississippi River. It is set in the 1840s in the fictional town of St. Petersburg, inspired by Hannibal, Missouri, where Twain lived as a boy. In the novel Tom Sawyer has several adventures, often with his friend, Huck. One such adventure, Tom's whitewashing of a fence, has been adapted into paintings and referenced in other pieces of popular culture. Originally a commercial failure the book ended up being the best selling of any of Twain's works during his lifetime.",
