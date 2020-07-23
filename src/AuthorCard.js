@@ -34,7 +34,7 @@ const styles = {
   },
   authorCard: {
     width: "168px",
-    minHeight: "310px",
+    minHeight: "320px",
     boxShadow: "0 0 20px #aaa",
     margin: "25px",
     padding: "10px 10px 0 10px",

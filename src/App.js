@@ -1,7 +1,7 @@
 import React from "react"
 
 import BookCard from "./BookCard"
-import AuthorCard from "./AuthorCard"
+import AuthorList from "./AuthorList"
 
 class App extends React.Component {
   render () {
@@ -10,7 +10,7 @@ class App extends React.Component {
         <header style={styles.header}>Crown-Books</header>
         <main style={styles.main}>
           <BookCard book={this.props.book} />
-          <AuthorCard author={this.props.book.Author} />
+          <AuthorList authors={this.props.book.Authors} />
         </main>
         <footer style={styles.footer}>
           <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
