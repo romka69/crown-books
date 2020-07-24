@@ -1,5 +1,7 @@
 import React from "react"
 
+import DonateModal from "./DonateModal";
+
 class BookCard extends React.Component {
   render () {
     if (!this.props.book)
@@ -47,6 +49,7 @@ class BookCard extends React.Component {
 
           <div>
             <button style={styles.action}>Donnate!</button>
+            <button><DonateModal /></button>
           </div>
         </div>
 
