@@ -5,7 +5,7 @@ class BookCard extends React.Component {
     if (!this.props.book)
       return <div>Empty book</div>
 
-    const { book: { Title, Annotation, Pages, Language, ProgressPercent, Cover, MinPrice, DesiredPrice, CurrentSum, ExpectedPrice } } = this.props
+    const { book: { Title, Annotation, Pages, Language, ProgressPercent, Cover, MinPrice, DesiredPrice, CurrentSum, ExpectedPrice, Feeds } } = this.props
 
     return (
       <div style={styles.bookContainer}>
@@ -14,10 +14,18 @@ class BookCard extends React.Component {
         </div>
         <div style={styles.description}>
           <div style={styles.title}>{Title}</div>
-          <div>{Annotation}</div>
+          {
+            Feeds > 20 ?
+              <div style={styles.popular}>
+                Popular
+              </div>
+              : ""
+          }
+          <div style={styles.annotation}>{Annotation}</div>
           <div style={styles.character}>Pages: {Pages}</div>
           <div style={styles.character}>Language: {Language}</div>
           <div style={styles.character}>Book done is: {ProgressPercent}</div>
+          <div style={styles.character}>Feeds: {Feeds}</div>
           <div style={styles.prices}>
             <div style={styles.price}>
               <div>Minimal price</div>
@@ -71,6 +79,14 @@ const styles = {
     fontWeight: "800",
     fontSize: "25px",
     marginBottom: "15px",
+  },
+  popular: {
+    fontWeight: "600",
+    fontSize: "14px",
+    color: "gray",
+  },
+  annotation: {
+    marginTop: "10px",
   },
   character: {
     marginTop: "10px",

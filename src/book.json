@@ -39,5 +39,6 @@
   "MinPrice": "$15",
   "DesiredPrice": "$22",
   "CurrentSum": "$3850",
-  "ExpectedPrice": "$4500"
+  "ExpectedPrice": "$4500",
+  "Feeds": 25
 }
