@@ -22,8 +22,8 @@ class AuthorList extends React.Component {
   }
 
   render () {
-    if (!this.props.authors)
-      return <div>Empty Author</div>
+    if (!this.props.authors || this.props.authors.length == 0)
+      return <div>Not have authors</div>
 
     return (
       <div>
