@@ -1,6 +1,13 @@
 import React from "react"
 
 class AuthorCard extends React.Component {
+  getSrc (url) {
+    if (!url)
+      return "https://dthezntil550i.cloudfront.net/kg/latest/kg1802132010216500004834729/c232a028-e829-4862-a10a-fbca6c390a7c.png"
+
+    return url
+  }
+
   render () {
     if (!this.props.author)
       return <div>Empty Author</div>
@@ -12,7 +19,7 @@ class AuthorCard extends React.Component {
         <div style={styles.info}>{Info}</div>
         <div style={styles.authorCard}>
           <div style={styles.cover}>
-            <img style={styles.imageCover} src={AvatarURL} alt="" />
+            <img style={styles.imageCover} src={this.getSrc(AvatarURL)} alt="" />
           </div>
           <div style={styles.author}>{Name}</div>
           <div>
