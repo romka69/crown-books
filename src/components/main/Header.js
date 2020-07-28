@@ -1,10 +1,14 @@
 import React from "react"
 
+import UserInfo from "./Header/UserInfo"
+
 class Header extends React.Component {
   render () {
     return (
       <header style={styles.header}>
         {this.props.children}
+
+        <UserInfo />
       </header>
     )
   }
