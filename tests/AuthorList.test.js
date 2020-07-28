@@ -4,9 +4,9 @@ import React from "react"
 import { render } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 
-import AuthorList from "./AuthorList"
+import AuthorList from "../src/components/AuthorList"
 
-import book from "./book.json"
+import book from "../src/data/book.json"
 
 test("renders authors in list", () => {
   const { getByText } = render(<AuthorList authors={book.Authors} />)

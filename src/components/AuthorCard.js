@@ -1,15 +1,10 @@
 import React from "react"
 
+import PropTypes from "prop-types"
+
 class AuthorCard extends React.Component {
-  getSrc (url) {
-    if (!url)
-      return "https://dthezntil550i.cloudfront.net/kg/latest/kg1802132010216500004834729/c232a028-e829-4862-a10a-fbca6c390a7c.png"
-
-    return url
-  }
-
   render () {
-    if (!this.props.author)
+    if (!this.props)
       return <div>Empty Author</div>
 
     const { author: { Name, Email, AvatarURL, Info } } = this.props
@@ -17,11 +12,14 @@ class AuthorCard extends React.Component {
     return (
       <div style={styles.authorContainer}>
         <div style={styles.info}>{Info}</div>
+
         <div style={styles.authorCard}>
           <div style={styles.cover}>
-            <img style={styles.imageCover} src={this.getSrc(AvatarURL)} alt="" />
+            <img style={styles.imageCover} src={AvatarURL} alt="" />
           </div>
+
           <div style={styles.author}>{Name}</div>
+
           <div>
             <a href={"mailto:" + Email}>{Email}</a>
           </div>
@@ -30,6 +28,20 @@ class AuthorCard extends React.Component {
 
     )
   }
+}
+
+AuthorCard.propTypes = {
+  Name: PropTypes.string,
+  Email: PropTypes.string,
+  AvatarURL: PropTypes.string,
+  Info: PropTypes.string,
+}
+
+AuthorCard.defaultProps = {
+  Name: "Author Name",
+  Email: "example@mail.com",
+  AvatarURL: "https://dthezntil550i.cloudfront.net/kg/latest/kg1802132010216500004834729/c232a028-e829-4862-a10a-fbca6c390a7c.png",
+  Info: "About Author",
 }
 
 export default AuthorCard

@@ -1,5 +1,7 @@
 import React from "react"
 
+import PropTypes from "prop-types"
+
 import AuthorCard from "./AuthorCard"
 
 class AuthorList extends React.Component {
@@ -32,17 +34,22 @@ class AuthorList extends React.Component {
             Show all Authors
           </button>
         </div>
+
         {
           this.sliceAuthors()
             .map(author => (
-              <div key={author.Id}>
-                <AuthorCard author={author} />
-              </div>
+              <AuthorCard key={author.Id} author={author} />
             ))
         }
       </div>
     )
   }
+}
+
+AuthorList.propTypes = {
+  authors: PropTypes.arrayOf(
+    PropTypes.shape(AuthorCard.propTypes)
+  )
 }
 
 export default AuthorList

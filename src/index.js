@@ -5,7 +5,7 @@ import App from './App'
 
 import "./index.css"
 
-import book from "./book.json"
+import book from "./data/book.json"
 
 ReactDom.render(
   <App book={book} />,

@@ -4,7 +4,7 @@ import React from "react"
 import { render } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 
-import BookCard from "./BookCard"
+import BookCard from "../src/components/BookCard"
 
 test("renders book in a card", () => {
   const book = {
@@ -20,10 +20,10 @@ test("renders book in a card", () => {
       "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Mark_Twain_by_AF_Bradley.jpg",
       "Info": "Samuel Langhorne Clemens (November 30, 1835 – April 21, 1910),[1] known by his pen name Mark Twain, was an American writer, humorist, entrepreneur, publisher, and lecturer. He was lauded as the 'greatest humorist [the United States]has produced', and William Faulkner called him 'the father of American literature'.His novels include The Adventures of Tom Sawyer (1876) and its sequel, the Adventures of Huckleberry Finn (1884), the latter often called 'The Great American Novel'."
     },
-    "MinPrice": "$15",
-    "DesiredPrice": "$22",
-    "CurrentSum": "$3850",
-    "ExpectedPrice": "$4500",
+    "MinPrice": 15,
+    "DesiredPrice": 22,
+    "CurrentSum": 3850,
+    "ExpectedPrice": 4500,
   }
 
   const { getByText } = render(<BookCard book={book} />)

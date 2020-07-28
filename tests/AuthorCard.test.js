@@ -4,9 +4,9 @@ import React from "react"
 import { render } from "@testing-library/react"
 import "@testing-library/jest-dom/extend-expect"
 
-import AuthorCard from "./AuthorCard"
+import AuthorCard from "../src/components/AuthorCard"
 
-import book from "./book.json"
+import book from "../src/data/book.json"
 
 test("renders author in a card", () => {
   const { getByText } = render(<AuthorCard author={book.Authors[0]} />)
