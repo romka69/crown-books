@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import Header from "./components/main/Header"
 import BookCard from "./components/BookCard"
 import AuthorList from "./components/AuthorList"
+import Form from "./components/Form"
 import Footer from "./components/main/Footer"
 
 class App extends React.Component {
@@ -18,6 +19,7 @@ class App extends React.Component {
         <main style={styles.main}>
           <BookCard book={book} />
           <AuthorList authors={Authors} />
+          <Form />
         </main>
 
         <Footer>
