@@ -7,15 +7,15 @@ class UserInfo extends React.Component {
     return (
       <AuthContext.Consumer>
         {
-          children => (
+          ({ avatarUrl, firstName, lastName, email }) => (
             <div style={styles.userWrapper}>
               <div>
-                <img src={children.avatarUrl} alt="" style={styles.img} />
+                <img src={avatarUrl} alt="" style={styles.img} />
               </div>
               <div>
-                <span>{children.firstName} {children.lastName}</span>
+                <span>{firstName} {lastName}</span>
               </div>
-              <div>{children.email}</div>
+              <div>{email}</div>
             </div>
           )
         }

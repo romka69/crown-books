@@ -3,9 +3,13 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import CoverBlock from "./BookCard/CoverBlock"
-import Description from "./BookCard/Description"
+import Header from "./BookCard/Header"
+import PopularTag from "./BookCard/PopularTag"
+import Summary from "./BookCard/Summary"
+import Details from "./BookCard/Details"
 import Prices from "./BookCard/Prices"
-import Donate from "./BookCard/Donate"
+import DonateButton from "./BookCard/DonateButton"
+import DonateModal from "./BookCard/DonateModal"
 
 class BookCard extends React.Component {
   render () {
@@ -19,11 +23,19 @@ class BookCard extends React.Component {
         <CoverBlock url={Cover} />
 
         <div style={styles.description}>
-          <Description descProps={{ Title, Annotation, Pages, Language, ProgressPercent, Feeds }} />
+          <Header label={Title} />
+
+          <PopularTag feeds={Feeds} />
+
+          <Summary text={Annotation} />
+
+          <Details detailsProps={{ Pages, Language, ProgressPercent, Feeds }} />
 
           <Prices pricesProps={{ MinPrice, DesiredPrice, CurrentSum, ExpectedPrice }} />
 
-          <Donate />
+          <DonateButton />
+
+          <DonateModal />
         </div>
       </div >
     )
@@ -31,13 +43,13 @@ class BookCard extends React.Component {
 }
 
 BookCard.propTypes = {
-  book: PropTypes.arrayOf(
-    PropTypes.shape([
-      CoverBlock.propTypes,
-      Description.propTypes,
-      Prices.propTypes,
-    ])
-  )
+  book: PropTypes.shape({
+    Cover: CoverBlock.propTypes.url,
+    Title: Header.propTypes.label,
+    Annotation: Summary.propTypes.text,
+    Details: PropTypes.shape(Details.propTypes),
+    Prices: PropTypes.shape(Prices.propTypes),
+  })
 }
 
 export default BookCard

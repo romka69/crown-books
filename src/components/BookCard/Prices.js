@@ -2,45 +2,28 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
+import Price from "./Price"
+
 class Prices extends React.Component {
   render () {
     const { pricesProps: { MinPrice, DesiredPrice, CurrentSum, ExpectedPrice } } = this.props
 
     return (
       <div style={styles.prices}>
-        <div style={styles.price}>
-          <div>Minimal price</div>
-          <div>${MinPrice}</div>
-        </div>
-        <div style={styles.price}>
-          <div>Desired price</div>
-          <div>${DesiredPrice}</div>
-        </div>
-        <div style={styles.price}>
-          <div>Current sum</div>
-          <div>${CurrentSum}</div>
-        </div>
-        <div style={styles.price}>
-          <div>Expected price</div>
-          <div>${ExpectedPrice}</div>
-        </div>
-      </div>
+        <Price label="Minimal price" val={MinPrice} />
+
+        <Price label="Desired price" val={DesiredPrice} />
+
+        <Price label="Current sum" val={CurrentSum} />
+
+        <Price label="Expected price" val={ExpectedPrice} />
+      </div >
     )
   }
 }
 
 Prices.propTypes = {
-  MinPrice: PropTypes.number,
-  DesiredPrice: PropTypes.number,
-  CurrentSum: PropTypes.number,
-  ExpectedPrice: PropTypes.number,
-}
-
-Prices.defaultProps = {
-  MinPrice: 0,
-  DesiredPrice: 0,
-  CurrentSum: 0,
-  ExpectedPrice: 0,
+  Price: Price.propTypes.val,
 }
 
 export default Prices
@@ -52,9 +35,5 @@ const styles = {
     marginTop: "10px",
     fontSize: "16px",
     fontWeight: "600",
-  },
-  price: {
-    flex: "0 0 25%",
-    maxWidth: "25%",
   },
 }

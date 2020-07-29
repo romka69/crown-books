@@ -2,7 +2,7 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import AuthorCard from "./AuthorCard"
+import AuthorCard from "./AuthorList/AuthorCard"
 
 class AuthorList extends React.Component {
   constructor(props) {
@@ -47,9 +47,7 @@ class AuthorList extends React.Component {
 }
 
 AuthorList.propTypes = {
-  authors: PropTypes.arrayOf(
-    PropTypes.shape(AuthorCard.propTypes)
-  )
+  author: PropTypes.shape(AuthorCard.propTypes),
 }
 
 export default AuthorList

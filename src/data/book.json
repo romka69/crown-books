@@ -5,6 +5,7 @@
   "Pages": "242",
   "Language": "English",
   "ProgressPercent": "99%",
+  "Feeds": "25",
   "Cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Tom_Sawyer_1876_frontispiece.jpg/800px-Tom_Sawyer_1876_frontispiece.jpg",
   "Authors": [
     {
@@ -39,6 +40,5 @@
   "MinPrice": 15,
   "DesiredPrice": 22,
   "CurrentSum": 3850,
-  "ExpectedPrice": 4500,
-  "Feeds": 25
+  "ExpectedPrice": 4500
 }
