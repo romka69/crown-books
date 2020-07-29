@@ -1,6 +1,6 @@
 import React from "react"
 
-import AuthContext from "~/AuthContext"
+import AuthContext from "../../../../AuthContext"
 
 class UserInfo extends React.Component {
   render () {
