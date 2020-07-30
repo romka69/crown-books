@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Summary from "./Summary"
 import Cover from "./Cover"
 import NameRow from "./NameRow"
-import EmailRow from "./NameRow"
+import EmailRow from "./EmailRow"
 
 class AuthorCard extends React.Component {
   render () {

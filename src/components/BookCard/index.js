@@ -2,14 +2,14 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import CoverBlock from "./BookCard/CoverBlock"
-import Header from "./BookCard/Header"
-import PopularTag from "./BookCard/PopularTag"
-import Summary from "./BookCard/Summary"
-import Details from "./BookCard/Details"
-import Prices from "./BookCard/Prices"
-import DonateButton from "./BookCard/DonateButton"
-import DonateModal from "./BookCard/DonateModal"
+import CoverBlock from "./CoverBlock"
+import Header from "./Header"
+import PopularTag from "./PopularTag"
+import Summary from "./Summary"
+import Details from "./Details"
+import Prices from "./Prices"
+import DonateButton from "./DonateButton"
+import DonateModal from "./DonateModal"
 
 class BookCard extends React.Component {
   render () {

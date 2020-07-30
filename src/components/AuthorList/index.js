@@ -2,7 +2,7 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import AuthorCard from "./AuthorList/AuthorCard"
+import AuthorCard from "./AuthorCard"
 
 class AuthorList extends React.Component {
   constructor(props) {
