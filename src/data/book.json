@@ -5,6 +5,7 @@
   "Pages": "242",
   "Language": "English",
   "ProgressPercent": "99%",
+  "Feeds": "25",
   "Cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Tom_Sawyer_1876_frontispiece.jpg/800px-Tom_Sawyer_1876_frontispiece.jpg",
   "Authors": [
     {
@@ -36,9 +37,8 @@
       "Info": "Stephen Edwin King (born September 21, 1947) is an American author of horror, supernatural fiction, suspense, crime, science-fiction, and fantasy novels. His books have sold more than 350 million copies, and many have been adapted into films, television series, miniseries, and comic books. King has published 61 novels, including seven under the pen name Richard Bachman, and five non-fiction books. He has also written approximately 200 short stories, most of which have been published in book collections."
     }
   ],
-  "MinPrice": "$15",
-  "DesiredPrice": "$22",
-  "CurrentSum": "$3850",
-  "ExpectedPrice": "$4500",
-  "Feeds": 25
+  "MinPrice": 15,
+  "DesiredPrice": 22,
+  "CurrentSum": 3850,
+  "ExpectedPrice": 4500
 }

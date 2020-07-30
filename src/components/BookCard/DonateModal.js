@@ -15,7 +15,7 @@ class DonateModal extends React.Component {
   render () {
     return (
       <>
-        <a onClick={() => this.toogle()}>Donate info</a>
+        <button onClick={() => this.toogle()}>Donate info</button>
         {
           this.state.isOpen && ReactDom.createPortal(
             <div style={styles.overlay}>
