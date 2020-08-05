@@ -25,6 +25,8 @@ class RelatedBooks extends React.Component {
   render () {
     const { items } = this.state
 
+    console.log("render index")
+
     if (items.length <= 0)
       return ""
 

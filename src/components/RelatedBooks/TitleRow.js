@@ -1,6 +1,7 @@
 import React from "react"
 
 const TitleRow = ({ children }) => {
+  console.log("render index")
   return (
     <h5 style={styles.title}>{children}</h5>
   )
