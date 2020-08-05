@@ -2,12 +2,10 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-class Summary extends React.Component {
-  render () {
-    return (
-      <div style={styles.annotation}>{this.props.text}</div>
-    )
-  }
+const Summary = ({ text }) => {
+  return (
+    <div style={styles.annotation}>{text}</div>
+  )
 }
 
 Summary.propTypes = {

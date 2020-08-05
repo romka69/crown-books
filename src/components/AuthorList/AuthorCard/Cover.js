@@ -2,14 +2,12 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-class Cover extends React.Component {
-  render () {
-    return (
-      <div style={styles.cover}>
-        <img style={styles.imageCover} src={this.props.url} alt="" />
-      </div>
-    )
-  }
+const Cover = ({ url }) => {
+  return (
+    <div style={styles.cover}>
+      <img style={styles.imageCover} src={url} alt="" />
+    </div>
+  )
 }
 
 Cover.propTypes = {

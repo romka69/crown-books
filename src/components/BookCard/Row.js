@@ -1,11 +1,9 @@
 import React from "react"
 
-class Row extends React.Component {
-  render () {
-    return (
-      <div style={styles.character}>{this.props.children}</div>
-    )
-  }
+const Row = ({ children }) => {
+  return (
+    <div style={styles.character}>{children}</div>
+  )
 }
 
 export default Row

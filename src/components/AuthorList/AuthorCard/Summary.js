@@ -1,11 +1,9 @@
 import React from "react"
 
-class Summary extends React.Component {
-  render () {
-    return (
-      <div style={styles.info}>{this.props.children}</div>
-    )
-  }
+const Summary = ({ children }) => {
+  return (
+    <div style={styles.info}>{children}</div>
+  )
 }
 
 export default Summary

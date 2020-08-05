@@ -2,17 +2,15 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-class PopularTag extends React.Component {
-  render () {
-    if (Number.parseInt(this.props.feeds) > 20)
-      return (
-        <div style={styles.popular}>
-          Popular
-        </div>
-      )
+const PopularTag = ({ feeds }) => {
+  if (Number.parseInt(feeds) > 20)
+    return (
+      <div style={styles.popular}>
+        Popular
+      </div>
+    )
 
-    return ""
-  }
+  return ""
 }
 
 PopularTag.propTypes = {

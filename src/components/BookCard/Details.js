@@ -4,23 +4,22 @@ import PropTypes from "prop-types"
 
 import Row from "./Row"
 
-class Details extends React.Component {
-  render () {
-    const { detailsProps: { Pages, Language, ProgressPercent, Feeds } } = this.props
+const Details = ({ detailsProps }) => {
+  const { Pages, Language, ProgressPercent, Feeds } = detailsProps
 
-    return (
-      <>
-        <Row>Pages: {Pages}</Row>
+  return (
+    <>
+      <Row>Pages: {Pages}</Row>
 
-        <Row>Language: {Language}</Row>
+      <Row>Language: {Language}</Row>
 
-        <Row>Book done is: {ProgressPercent}</Row>
+      <Row>Book done is: {ProgressPercent}</Row>
 
-        <Row>Feeds: {Feeds}</Row>
-      </>
-    )
-  }
+      <Row>Feeds: {Feeds}</Row>
+    </>
+  )
 }
+
 
 Details.propTypes = {
   Pages: PropTypes.string,

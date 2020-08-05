@@ -2,16 +2,14 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-class CoverBlock extends React.Component {
-  render () {
-    return (
-      <div style={styles.bookContainer}>
-        <div style={styles.bookCard}>
-          <img style={styles.bookCover} src={this.props.url} alt="" />
-        </div>
-      </div >
-    )
-  }
+const CoverBlock = ({ url }) => {
+  return (
+    <div style={styles.bookContainer}>
+      <div style={styles.bookCard}>
+        <img style={styles.bookCover} src={url} alt="" />
+      </div>
+    </div >
+  )
 }
 
 CoverBlock.propTypes = {
