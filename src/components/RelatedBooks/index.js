@@ -6,8 +6,27 @@ import Header from "./Header"
 import BookCard from "./BookCard"
 
 class RelatedBooks extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      items: props.books
+    }
+
+    this.removeFromRelated = this.removeFromRelated.bind(this)
+  }
+
+  removeFromRelated (bookId) {
+    this.setState((state) => ({
+      items: state.items.filter(item => item.Id != bookId)
+    }))
+  }
+
   render () {
-    const { books } = this.props
+    const { items } = this.state
+
+    if (items.length <= 0)
+      return ""
 
     return (
       <>
@@ -15,8 +34,12 @@ class RelatedBooks extends React.Component {
 
         <div style={styles.books}>
           {
-            books.map(book => (
-              <BookCard key={book.Id} book={book} />
+            items.map(item => (
+              <BookCard
+                key={item.Id}
+                book={item}
+                removeFromRelated={this.removeFromRelated}
+              />
             ))
           }
         </div>

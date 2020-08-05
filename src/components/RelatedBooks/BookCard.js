@@ -5,25 +5,24 @@ import PropTypes from "prop-types"
 import TitleRow from "./TitleRow"
 import CoverBlock from "./CoverBlock"
 import AuthorBlock from "./AuthorBlock"
+import CloseButton from "./CloseButton"
 
-class BookCard extends React.Component {
-  render () {
-    const { book: { Title, Cover, Author } } = this.props
+const BookCard = ({ book: { Id, Title, Cover, Author }, removeFromRelated }) => {
+  return (
+    <div style={styles.book}>
+      <TitleRow>{Title}</TitleRow>
 
-    return (
-      <div style={styles.book}>
-        <TitleRow>{Title}</TitleRow>
+      <CoverBlock url={Cover} />
 
-        <CoverBlock url={Cover} />
+      <AuthorBlock author={Author} />
 
-        <AuthorBlock author={Author} />
-      </div>
-
-    )
-  }
+      <CloseButton id={Id} removeFromRelated={removeFromRelated} />
+    </div>
+  )
 }
 
 BookCard.propTypes = {
+  Id: PropTypes.number,
   Title: PropTypes.string,
   Author: PropTypes.object,
 }
