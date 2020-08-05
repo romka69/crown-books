@@ -1,6 +1,6 @@
 import React from "react"
 
-class Donate extends React.Component {
+class DonateButton extends React.Component {
   render () {
     return (
       <div>
@@ -10,7 +10,7 @@ class Donate extends React.Component {
   }
 }
 
-export default Donate
+export default DonateButton
 
 const styles = {
   action: {
