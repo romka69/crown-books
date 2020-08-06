@@ -8,6 +8,7 @@ import PopularTag from "./PopularTag"
 import Summary from "./Summary"
 import Details from "./Details"
 import Prices from "./Prices"
+import UserPrice from "./UserPrice"
 import DonateButton from "./DonateButton"
 import DonateModal from "./DonateModal"
 
@@ -31,6 +32,8 @@ const BookCard = ({ book }) => {
         <Details detailsProps={{ Pages, Language, ProgressPercent, Feeds }} />
 
         <Prices pricesProps={{ MinPrice, DesiredPrice, CurrentSum, ExpectedPrice }} />
+
+        <UserPrice minPrice={MinPrice} />
 
         <DonateButton />
 
