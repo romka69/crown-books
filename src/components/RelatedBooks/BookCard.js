@@ -8,7 +8,6 @@ import AuthorBlock from "./AuthorBlock"
 import CloseButton from "./CloseButton"
 
 const BookCard = React.memo(({ book: { Id, Title, Cover, Author }, removeFromRelated }) => {
-  console.log("render bookcard")
   return (
     <div style={styles.book}>
       <TitleRow>{Title}</TitleRow>
