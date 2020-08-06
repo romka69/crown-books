@@ -7,7 +7,7 @@ import CoverBlock from "./CoverBlock"
 import AuthorBlock from "./AuthorBlock"
 import CloseButton from "./CloseButton"
 
-const BookCard = ({ book: { Id, Title, Cover, Author }, removeFromRelated }) => {
+const BookCard = React.memo(({ book: { Id, Title, Cover, Author }, removeFromRelated }) => {
   console.log("render bookcard")
   return (
     <div style={styles.book}>
@@ -20,7 +20,7 @@ const BookCard = ({ book: { Id, Title, Cover, Author }, removeFromRelated }) => 
       <CloseButton id={Id} removeFromRelated={removeFromRelated} />
     </div>
   )
-}
+})
 
 BookCard.propTypes = {
   Id: PropTypes.number,
