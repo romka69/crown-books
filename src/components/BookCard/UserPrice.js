@@ -15,6 +15,11 @@ class UserPrice extends React.Component {
   }
 
   setField (e) {
+    const lengthPrice = 4
+
+    if (e.target.value.length > lengthPrice)
+      return
+
     this.setState({ userPrice: e.target.value })
   }
 
@@ -30,8 +35,8 @@ class UserPrice extends React.Component {
       <div style={styles.userPrice}>
         <span style={styles.title}>Your price</span>
         <input
-          name="userPrice"
           type="number"
+          value={userPrice}
           onChange={this.setField}
         />
 
