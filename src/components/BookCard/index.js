@@ -8,38 +8,39 @@ import PopularTag from "./PopularTag"
 import Summary from "./Summary"
 import Details from "./Details"
 import Prices from "./Prices"
+import UserPrice from "./UserPrice"
 import DonateButton from "./DonateButton"
 import DonateModal from "./DonateModal"
 
-class BookCard extends React.Component {
-  render () {
-    if (!this.props.book)
-      return <div>Empty book</div>
+const BookCard = ({ book }) => {
+  const { Title, Annotation, Pages, Language, ProgressPercent, Cover, MinPrice, DesiredPrice, CurrentSum, ExpectedPrice, Feeds } = book
 
-    const { book: { Title, Annotation, Pages, Language, ProgressPercent, Cover, MinPrice, DesiredPrice, CurrentSum, ExpectedPrice, Feeds } } = this.props
+  if (!book)
+    return <div>Empty book</div>
 
-    return (
-      <div style={styles.bookContainer}>
-        <CoverBlock url={Cover} />
+  return (
+    <div style={styles.bookContainer}>
+      <CoverBlock url={Cover} />
 
-        <div style={styles.description}>
-          <Header label={Title} />
+      <div style={styles.description}>
+        <Header label={Title} />
 
-          <PopularTag feeds={Feeds} />
+        <PopularTag feeds={Feeds} />
 
-          <Summary text={Annotation} />
+        <Summary text={Annotation} />
 
-          <Details detailsProps={{ Pages, Language, ProgressPercent, Feeds }} />
+        <Details detailsProps={{ Pages, Language, ProgressPercent, Feeds }} />
 
-          <Prices pricesProps={{ MinPrice, DesiredPrice, CurrentSum, ExpectedPrice }} />
+        <Prices pricesProps={{ MinPrice, DesiredPrice, CurrentSum, ExpectedPrice }} />
 
-          <DonateButton />
+        <UserPrice minPrice={MinPrice} />
 
-          <DonateModal />
-        </div>
-      </div >
-    )
-  }
+        <DonateButton />
+
+        <DonateModal />
+      </div>
+    </div>
+  )
 }
 
 BookCard.propTypes = {

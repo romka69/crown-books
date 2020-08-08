@@ -2,12 +2,10 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-class Header extends React.Component {
-  render () {
-    return (
-      <div style={styles.title}>{this.props.label}</div>
-    )
-  }
+const Header = ({ label }) => {
+  return (
+    <div style={styles.title}>{label}</div>
+  )
 }
 
 Header.propTypes = {

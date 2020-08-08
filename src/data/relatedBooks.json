@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Title": "The Lord of the Rings",
+    "Cover": "https://upload.wikimedia.org/wikipedia/en/e/e9/First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif",
+    "Author": {
+      "Id": 1,
+      "Name": "John RR Tolkien",
+      "Email": "john-ronald@yahoo.com",
+      "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/6/66/J._R._R._Tolkien%2C_1940s.jpg",
+      "Info": "John Ronald Reuel Tolkien (3 January 1892 – 2 September 1973) was an English writer, poet, philologist, and academic. He was the author of the high fantasy works The Hobbit and The Lord of the Rings."
+    }
+  },
+  {
+    "Id": 2,
+    "Title": "Star Wars",
+    "Cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/1920px-Star_wars2.svg.png",
+    "Author": {
+      "Id": 1,
+      "Name": "George Lucas",
+      "Email": "george-lucas@yahoo.com",
+      "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/a/a0/George_Lucas_cropped_2009.jpg",
+      "Info": "George Walton Lucas Jr. (born May 14, 1944) is an American film director, producer, screenwriter, and entrepreneur. Lucas is best known for creating the Star Wars and Indiana Jones franchises and founding Lucasfilm, LucasArts, and Industrial Light & Magic."
+    }
+  },
+  {
+    "Id": 3,
+    "Title": "Moby-Dick",
+    "Cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Moby-Dick_FE_title_page.jpg/800px-Moby-Dick_FE_title_page.jpg",
+    "Author": {
+      "Id": 1,
+      "Name": "Herman Melville",
+      "Email": "herman-melville@yahoo.com",
+      "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Herman_Melville_by_Joseph_O_Eaton.jpg/800px-Herman_Melville_by_Joseph_O_Eaton.jpg",
+      "Info": "Herman Melville (born Melvill August 1, 1819 – September 28, 1891) was an American novelist, short story writer and poet of the American Renaissance period."
+    }
+  }
+]

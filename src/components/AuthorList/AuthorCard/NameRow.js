@@ -1,11 +1,9 @@
 import React from "react"
 
-class NameRow extends React.Component {
-  render () {
-    return (
-      <div style={styles.author}>{this.props.children}</div>
-    )
-  }
+const NameRow = ({ children }) => {
+  return (
+    <div style={styles.author}>{children}</div>
+  )
 }
 
 export default NameRow

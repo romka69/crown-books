@@ -4,9 +4,12 @@ import PropTypes from "prop-types"
 
 import Header from "./components/main/Header"
 import BookCard from "./components/BookCard"
+import RelatedBooks from "./components/RelatedBooks"
 import AuthorList from "./components/AuthorList"
 import Form from "./components/Form"
 import Footer from "./components/main/Footer"
+
+import Books from "./data/relatedBooks.json"
 
 class App extends React.Component {
   render () {
@@ -18,6 +21,7 @@ class App extends React.Component {
 
         <main style={styles.main}>
           <BookCard book={book} />
+          <RelatedBooks books={Books} />
           <AuthorList authors={Authors} />
           <Form />
         </main>
@@ -33,6 +37,7 @@ class App extends React.Component {
 
 App.propTypes = {
   book: PropTypes.object,
+  books: PropTypes.array,
   Authors: PropTypes.object,
 }
 

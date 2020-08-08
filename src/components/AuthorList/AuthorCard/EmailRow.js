@@ -1,13 +1,11 @@
 import React from "react"
 
-class EmailRow extends React.Component {
-  render () {
-    return (
-      <div>
-        <a href={"mailto:" + this.props.children}>{this.props.children}</a>
-      </div>
-    )
-  }
+const EmailRow = ({ children }) => {
+  return (
+    <div>
+      <a href={"mailto:" + children}>{children}</a>
+    </div>
+  )
 }
 
 export default EmailRow

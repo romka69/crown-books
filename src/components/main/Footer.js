@@ -1,13 +1,11 @@
 import React from "react"
 
-class Footer extends React.Component {
-  render () {
-    return (
-      <footer style={styles.footer}>
-        {this.props.children}
-      </footer>
-    )
-  }
+const Footer = ({ children }) => {
+  return (
+    <footer style={styles.footer}>
+      {children}
+    </footer>
+  )
 }
 
 export default Footer;

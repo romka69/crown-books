@@ -2,17 +2,13 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-class Price extends React.Component {
-  render () {
-    const { label, val } = this.props
-
-    return (
-      <div style={styles.price}>
-        <div>{label}</div>
-        <div>${val}</div>
-      </div>
-    )
-  }
+const Price = ({ label, val }) => {
+  return (
+    <div style={styles.price}>
+      <div>{label}</div>
+      <div>${val}</div>
+    </div>
+  )
 }
 
 Price.propTypes = {

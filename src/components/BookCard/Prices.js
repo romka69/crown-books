@@ -4,22 +4,20 @@ import PropTypes from "prop-types"
 
 import Price from "./Price"
 
-class Prices extends React.Component {
-  render () {
-    const { pricesProps: { MinPrice, DesiredPrice, CurrentSum, ExpectedPrice } } = this.props
+const Prices = ({ pricesProps }) => {
+  const { MinPrice, DesiredPrice, CurrentSum, ExpectedPrice } = pricesProps
 
-    return (
-      <div style={styles.prices}>
-        <Price label="Minimal price" val={MinPrice} />
+  return (
+    <div style={styles.prices}>
+      <Price label="Minimal price" val={MinPrice} />
 
-        <Price label="Desired price" val={DesiredPrice} />
+      <Price label="Desired price" val={DesiredPrice} />
 
-        <Price label="Current sum" val={CurrentSum} />
+      <Price label="Current sum" val={CurrentSum} />
 
-        <Price label="Expected price" val={ExpectedPrice} />
-      </div >
-    )
-  }
+      <Price label="Expected price" val={ExpectedPrice} />
+    </div >
+  )
 }
 
 Prices.propTypes = {
