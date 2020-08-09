@@ -7,11 +7,17 @@ class UserPrice extends React.Component {
     super(props)
 
     this.state = {
-      userPrice: 0,
+      userPrice: "",
     }
+
+    this.priceInputRef = React.createRef()
 
     this.setField = this.setField.bind(this)
     this.calcPrice = this.calcPrice.bind(this)
+  }
+
+  componentDidMount () {
+    this.priceInputRef.current.focus()
   }
 
   setField (e) {
@@ -35,6 +41,7 @@ class UserPrice extends React.Component {
       <div style={styles.userPrice}>
         <span style={styles.title}>Your price</span>
         <input
+          ref={this.priceInputRef}
           type="number"
           value={userPrice}
           onChange={this.setField}
