@@ -3,28 +3,24 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./components/main/Header"
-import BookCard from "./components/BookCard"
-import RelatedBooks from "./components/RelatedBooks"
+import BookContainer from "./components/BookCard/BookContainer"
 import AuthorList from "./components/AuthorList"
 import Form from "./components/Form"
 import Footer from "./components/main/Footer"
 
-import Books from "./data/relatedBooks.json"
-
 class App extends React.Component {
   render () {
-    const { book, book: { Authors } } = this.props
+    const { book: { Authors } } = this.props
 
     return (
       <>
         <Header>Crown-Books</Header>
 
-        <main style={styles.main}>
-          <BookCard book={book} />
-          <RelatedBooks books={Books} />
-          <AuthorList authors={Authors} />
-          <Form />
-        </main>
+        <BookContainer />
+
+        <AuthorList authors={Authors} />
+
+        <Form />
 
         <Footer>
           <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
