@@ -2,35 +2,36 @@ import React from "react"
 
 import BookCard from "./index"
 import RelatedBooks from "../RelatedBooks"
+import AuthorList from "../AuthorList"
 
-import Books from "../../data/relatedBooks.json"
-
-import { fetchBookById, fetchRelatedBooks } from "../../data/fetchData"
+import { fetchBookById, fetchAuthors, fetchBooks } from "../../data/fetchData"
 
 class BookContainer extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      apiBook: null,
-      apiRelatedBooks: null,
+      book: null,
+      authorsData: null,
+      relatedBooks: null,
     }
   }
 
   componentDidMount () {
-    this.getBook()
+    this.getData()
   }
 
   render () {
-    const { apiBook, apiRelatedBooks } = this.state
+    const { book, authorsData, relatedBooks } = this.state
 
     return (
       <>
         {
-          apiBook ? (
+          book && authorsData && relatedBooks ? (
             <>
-              <BookCard book={apiBook} />
-              <RelatedBooks books={Books} />
+              <BookCard book={book} />
+              <RelatedBooks books={relatedBooks} />
+              <AuthorList authors={authorsData} />
             </>
           ) : (
               <div>Loading...</div>
@@ -40,21 +41,31 @@ class BookContainer extends React.Component {
     )
   }
 
-  getBook () {
+  getData () {
     fetchBookById("rechou1YPRb0takuM")
-      .then(apiBook => {
+      .then(book => {
         this.setState({
-          apiBook
+          book
         })
-        this.getRelatedBooks(apiBook.RelatedBooks)
+        this.getAuthors(book.Authors)
+        this.getRelatedBooks(book.RelatedBooks)
+      })
+  }
+
+  getAuthors (ids) {
+    fetchAuthors(ids)
+      .then(authorsData => {
+        this.setState({
+          authorsData
+        })
       })
   }
 
   getRelatedBooks (ids) {
-    fetchRelatedBooks(ids)
-      .then(apiRelatedBooks => {
+    fetchBooks(ids)
+      .then(relatedBooks => {
         this.setState({
-          apiRelatedBooks
+          relatedBooks
         })
       })
   }

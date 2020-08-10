@@ -8,19 +8,32 @@ function fetchBookById (id) {
     })
 }
 
-function fetchRelatedBooks (ids) {
-  let books = []
-
-  ids.map(
-    id => {
-      fetchBookById(id)
-        .then(data => {
-          books.push(data)
-        })
-    }
+function fetchBooks (ids) {
+  return Promise.all(
+    ids.map(
+      id => {
+        return fetchBookById(id)
+      }
+    )
   )
+}
 
-  return books
+function fetchAuthorById (id) {
+  return backend.authors.show(id)
+    .then(({ data }) => prepareAuthor(data))
+    .then(data => {
+      return data
+    })
+}
+
+function fetchAuthors (ids) {
+  return Promise.all(
+    ids.map(
+      id => {
+        return fetchAuthorById(id)
+      }
+    )
+  )
 }
 
 function prepareBook (data) {
@@ -33,13 +46,29 @@ function prepareBook (data) {
     ProgressPercent: data.fields.ProgressPercent,
     Feeds: data.fields.Feeds,
     Cover: data.fields.Cover[0].thumbnails.large.url,
-    Authors: data.fields.Authors,
     MinPrice: data.fields.MinPrice,
     DesiredPrice: data.fields.DesiredPrice,
     CurrentSum: data.fields.CurrentSum,
     ExpectedPrice: data.fields.ExpectedPrice,
     RelatedBooks: data.fields.RelatedBooks,
+    Authors: data.fields.Authors,
+    Author: {
+      Id: data.fields.Authors[0],
+      Name: data.fields["Name (from Authors)"][0],
+      Email: data.fields["Email (from Authors)"][0],
+      AvatarURL: data.fields["AvatarURL (from Authors)"][0],
+    }
   }
 }
 
-export { fetchBookById, fetchRelatedBooks }
+function prepareAuthor (data) {
+  return {
+    Id: data.id,
+    Name: data.fields.Name,
+    Email: data.fields.Email,
+    AvatarURL: data.fields.AvatarURL,
+    Info: data.fields.Info,
+  }
+}
+
+export { fetchBookById, fetchBooks, fetchAuthors }

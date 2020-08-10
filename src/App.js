@@ -4,22 +4,17 @@ import PropTypes from "prop-types"
 
 import Header from "./components/main/Header"
 import BookContainer from "./components/BookCard/BookContainer"
-import AuthorList from "./components/AuthorList"
 import Form from "./components/Form"
 import Footer from "./components/main/Footer"
 import ButtonScrollToTop from "./components/helpers/ButtonScrollToTop"
 
 class App extends React.Component {
   render () {
-    const { book: { Authors } } = this.props
-
     return (
       <>
         <Header>Crown-Books</Header>
 
         <BookContainer />
-
-        <AuthorList authors={Authors} />
 
         <Form />
 
