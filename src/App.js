@@ -7,6 +7,7 @@ import BookContainer from "./components/BookCard/BookContainer"
 import AuthorList from "./components/AuthorList"
 import Form from "./components/Form"
 import Footer from "./components/main/Footer"
+import ButtonScrollToTop from "./components/helpers/ButtonScrollToTop"
 
 class App extends React.Component {
   render () {
@@ -26,6 +27,8 @@ class App extends React.Component {
           <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
           <div>Training project from TN. <a href="https://github.com/romka69/crown-books" target="_blank">GitHub</a></div>
         </Footer>
+
+        <ButtonScrollToTop />
       </>
     )
   }
