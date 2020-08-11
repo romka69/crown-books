@@ -18,8 +18,7 @@ class ButtonScrollToTop extends React.Component {
     super(props)
 
     this.state = {
-      scroll: window.pageYOffset,
-      is_visible: false,
+      isVisible: false,
     }
 
     this.handleScroll = debounce(this.handleScroll.bind(this), 300)
@@ -30,23 +29,7 @@ class ButtonScrollToTop extends React.Component {
   }
 
   handleScroll () {
-    this.setScroll()
-
-    if (this.state.scroll > 300) {
-      this.setState({
-        is_visible: true
-      })
-    } else {
-      this.setState({
-        is_visible: false
-      })
-    }
-  }
-
-  setScroll () {
-    this.setState({
-      scroll: window.pageYOffset
-    })
+    this.setState({ isVisible: window.pageYOffset > 300 })
   }
 
   scrollToTop () {
@@ -61,12 +44,12 @@ class ButtonScrollToTop extends React.Component {
   }
 
   render () {
-    const { is_visible } = this.state
+    const { isVisible } = this.state
 
     return (
       <div>
         {
-          is_visible && (
+          isVisible && (
             <div style={styles.btn} onClick={() => this.scrollToTop()}>
               <p>^</p>
             </div>
