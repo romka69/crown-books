@@ -26,17 +26,11 @@ class BookContainer extends React.Component {
 
     return (
       <>
-        {
-          book && authorsData && relatedBooks ? (
-            <>
-              <BookCard book={book} />
-              <RelatedBooks books={relatedBooks} />
-              <AuthorList authors={authorsData} />
-            </>
-          ) : (
-              <div>Loading...</div>
-            )
-        }
+        <BookCard isLoading={[!book, "Book card"]} book={book} />
+
+        <RelatedBooks isLoading={[!relatedBooks, "Related books"]} books={relatedBooks} />
+
+        <AuthorList isLoading={[!authorsData, "Authors"]} authors={authorsData} />
       </>
     )
   }

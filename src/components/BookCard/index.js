@@ -12,6 +12,8 @@ import UserPrice from "./UserPrice"
 import DonateButton from "./DonateButton"
 import DonateModal from "./DonateModal"
 
+import withLoader from "../HOC/withLoader"
+
 const BookCard = ({ book }) => {
   const { Title, Annotation, Pages, Language, ProgressPercent, Cover, MinPrice, DesiredPrice, CurrentSum, ExpectedPrice, Feeds } = book
 
@@ -53,7 +55,7 @@ BookCard.propTypes = {
   })
 }
 
-export default BookCard
+export default withLoader(BookCard)
 
 const styles = {
   bookContainer: {
