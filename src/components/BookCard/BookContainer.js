@@ -4,22 +4,20 @@ import BookCard from "./index"
 import RelatedBooks from "../RelatedBooks"
 import AuthorList from "../AuthorList"
 
-import withBook from "../HOC/withBook"
+import useBook from "../hooks/useBook"
 
-class BookContainer extends React.Component {
-  render () {
-    const { bookData: { book, authorsData, relatedBooks } } = this.props
+const BookContainer = () => {
+  const { book, authorsData, relatedBooks } = useBook("rechou1YPRb0takuM")
 
-    return (
-      <>
-        <BookCard isLoading={[!book, "Book"]} book={book} />
+  return (
+    <>
+      <BookCard isLoading={[!book, "Book"]} book={book} />
 
-        <RelatedBooks isLoading={[!relatedBooks, "Related books"]} books={relatedBooks} />
+      <RelatedBooks isLoading={[!relatedBooks, "Related books"]} books={relatedBooks} />
 
-        <AuthorList isLoading={[!authorsData, "Authors"]} authors={authorsData} />
-      </>
-    )
-  }
+      <AuthorList isLoading={[!authorsData, "Authors"]} authors={authorsData} />
+    </>
+  )
 }
 
-export default withBook(BookContainer)
+export default BookContainer
