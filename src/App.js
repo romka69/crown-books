@@ -14,9 +14,11 @@ class App extends React.Component {
       <>
         <Header>Crown-Books</Header>
 
-        <BookContainer />
+        <div style={styles.main} >
+          <BookContainer />
 
-        <Form />
+          <Form />
+        </div>
 
         <Footer>
           <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
