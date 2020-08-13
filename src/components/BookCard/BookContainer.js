@@ -4,71 +4,20 @@ import BookCard from "./index"
 import RelatedBooks from "../RelatedBooks"
 import AuthorList from "../AuthorList"
 
-import { fetchBookById, fetchAuthors, fetchBooks } from "../../data/fetchData"
+import useBook from "../hooks/useBook"
 
-class BookContainer extends React.Component {
-  constructor(props) {
-    super(props)
+const BookContainer = () => {
+  const { book, authorsData, relatedBooks } = useBook("rechou1YPRb0takuM")
 
-    this.state = {
-      book: null,
-      authorsData: null,
-      relatedBooks: null,
-    }
-  }
+  return (
+    <>
+      <BookCard isLoading={[!book, "Book"]} book={book} />
 
-  componentDidMount () {
-    this.getData()
-  }
+      <RelatedBooks isLoading={[!relatedBooks, "Related books"]} books={relatedBooks} />
 
-  render () {
-    const { book, authorsData, relatedBooks } = this.state
-
-    return (
-      <>
-        {
-          book && authorsData && relatedBooks ? (
-            <>
-              <BookCard book={book} />
-              <RelatedBooks books={relatedBooks} />
-              <AuthorList authors={authorsData} />
-            </>
-          ) : (
-              <div>Loading...</div>
-            )
-        }
-      </>
-    )
-  }
-
-  getData () {
-    fetchBookById("rechou1YPRb0takuM")
-      .then(book => {
-        this.setState({
-          book
-        })
-        this.getAuthors(book.Authors)
-        this.getRelatedBooks(book.RelatedBooks)
-      })
-  }
-
-  getAuthors (ids) {
-    fetchAuthors(ids)
-      .then(authorsData => {
-        this.setState({
-          authorsData
-        })
-      })
-  }
-
-  getRelatedBooks (ids) {
-    fetchBooks(ids)
-      .then(relatedBooks => {
-        this.setState({
-          relatedBooks
-        })
-      })
-  }
+      <AuthorList isLoading={[!authorsData, "Authors"]} authors={authorsData} />
+    </>
+  )
 }
 
 export default BookContainer

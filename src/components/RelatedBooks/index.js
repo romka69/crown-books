@@ -5,6 +5,8 @@ import PropTypes from "prop-types"
 import Header from "./Header"
 import BookCard from "./BookCard"
 
+import withLoader from "../HOC/withLoader"
+
 class RelatedBooks extends React.Component {
   constructor(props) {
     super(props)
@@ -52,7 +54,7 @@ RelatedBooks.propTypes = {
   books: PropTypes.array,
 }
 
-export default RelatedBooks;
+export default withLoader(RelatedBooks)
 
 const styles = {
   books: {

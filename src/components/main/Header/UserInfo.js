@@ -1,24 +1,20 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import AuthContext from "../../../../AuthContext"
 
 const UserInfo = () => {
+  const { avatarUrl, firstName, lastName, email } = useContext(AuthContext)
+
   return (
-    <AuthContext.Consumer>
-      {
-        ({ avatarUrl, firstName, lastName, email }) => (
-          <div style={styles.userWrapper}>
-            <div>
-              <img src={avatarUrl} alt="" style={styles.img} />
-            </div>
-            <div>
-              <span>{firstName} {lastName}</span>
-            </div>
-            <div>{email}</div>
-          </div>
-        )
-      }
-    </AuthContext.Consumer>
+    <div style={styles.userWrapper}>
+      <div>
+        <img src={avatarUrl} alt="" style={styles.img} />
+      </div>
+      <div>
+        <span>{firstName} {lastName}</span>
+      </div>
+      <div>{email}</div>
+    </div>
   )
 }
 

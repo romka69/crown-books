@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 
 import AuthorCard from "./AuthorCard"
 
+import withLoader from "../HOC/withLoader"
+
 class AuthorList extends React.Component {
   constructor(props) {
     super(props)
@@ -50,7 +52,7 @@ AuthorList.propTypes = {
   author: PropTypes.shape(AuthorCard.propTypes),
 }
 
-export default AuthorList
+export default withLoader(AuthorList)
 
 const styles = {
   action: {
