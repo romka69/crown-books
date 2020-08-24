@@ -3,7 +3,7 @@ import React from "react"
 
 import App from './App'
 
-import "./index.css"
+import "./css/app.css"
 
 import AuthProvider from "./components/providers/AuthProvider"
 
