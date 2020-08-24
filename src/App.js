@@ -2,6 +2,8 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
+import ThemeProvider from "./components/providers/ThemeProvider"
+
 import Header from "./components/main/Header"
 import BookContainer from "./components/BookCard/BookContainer"
 import Form from "./components/Form"
@@ -11,7 +13,7 @@ import ButtonScrollToTop from "./components/helpers/ButtonScrollToTop"
 class App extends React.Component {
   render () {
     return (
-      <>
+      <ThemeProvider>
         <Header>Crown-Books</Header>
 
         <div style={styles.main} >
@@ -26,7 +28,7 @@ class App extends React.Component {
         </Footer>
 
         <ButtonScrollToTop />
-      </>
+      </ThemeProvider>
     )
   }
 }
