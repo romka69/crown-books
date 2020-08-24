@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 
-import AuthContext from "../../../../AuthContext"
+import AuthContext from "../../../contexts/AuthContext"
 
 const UserInfo = () => {
   const { avatarUrl, firstName, lastName, email } = useContext(AuthContext)

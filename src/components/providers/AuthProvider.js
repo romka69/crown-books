@@ -1,6 +1,6 @@
 import React from "react"
 
-import AuthContext from "../../../AuthContext"
+import AuthContext from "../../contexts/AuthContext"
 
 const currentUser = {
   email: "777-vasya-777@mail.com",
