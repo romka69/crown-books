@@ -2,30 +2,30 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import ThemeProvider from "./components/providers/ThemeProvider"
+import ThemeProvider from "./components/shared/providers/ThemeProvider"
 
-import Header from "./components/main/Header"
-import BookContainer from "./components/BookCard/BookContainer"
-import Form from "./components/Form"
-import Footer from "./components/main/Footer"
-import ButtonScrollToTop from "./components/helpers/ButtonScrollToTop"
+import Header from "./components/shared/Header"
+import Container from "./components/shared/base/Container"
+import Main from "./components/shared/base/Main"
+import Book from "./components/pages/Book"
+import Form from "./components/pages/Book/FeedBackForm"
+import Footer from "./components/shared/Footer"
+import ButtonScrollToTop from "./components/shared/helpers/ButtonScrollToTop"
 
 class App extends React.Component {
   render () {
     return (
       <ThemeProvider>
         <Header>Crown-Books</Header>
-
-        <div className="text-primary bg-primary">
-          <div className="max-w-screen-lg my-0 mx-auto px-3 xl:px-0" >
-            <BookContainer />
+        <Container>
+          <Main>
+            <Book />
             <Form />
-          </div>
+          </Main>
           <Footer>
-            <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
-            <div>Training project from TN. <a href="https://github.com/romka69/crown-books" target="_blank">GitHub</a></div>
+            &copy; Books crowdfunding, {new Date().getFullYear()}
           </Footer>
-        </div>
+        </Container>
         <ButtonScrollToTop />
       </ThemeProvider>
     )
