@@ -6,9 +6,9 @@ const UserInfo = () => {
   const { avatarUrl, firstName, lastName, email } = useContext(AuthContext)
 
   return (
-    <div style={styles.userWrapper}>
-      <div>
-        <img src={avatarUrl} alt="" style={styles.img} />
+    <div className="text-xs text-right">
+      <div className="flex justify-end">
+        <img src={avatarUrl} alt={firstName} title={firstName} className="h-8" />
       </div>
       <div>
         <span>{firstName} {lastName}</span>
@@ -18,16 +18,4 @@ const UserInfo = () => {
   )
 }
 
-export default UserInfo;
-
-const styles = {
-  userWrapper: {
-    textAlign: "right",
-    fontSize: "10px",
-    marginLeft: "auto",
-    marginRight: "0",
-  },
-  img: {
-    height: "40px",
-  },
-}
+export default UserInfo

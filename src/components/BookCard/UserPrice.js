@@ -38,16 +38,17 @@ class UserPrice extends React.Component {
     const { userPrice } = this.state
 
     return (
-      <div style={styles.userPrice}>
-        <span style={styles.title}>Your price</span>
+      <div className="mt-5 sm:flex items-center ml-5 md:ml-0">
+        <span className="pr-2">Your price</span>
         <input
+          className="border rounded py-2 px-3 w-24 leading-none text-secondary bg-secondary"
           ref={this.priceInputRef}
           type="number"
           value={userPrice}
           onChange={this.setField}
         />
 
-        <span style={styles.notify}>
+        <div className="text-accent text-xs sm:pl-5">
           {
             userPrice >= minPrice ? (
               `Author get $${this.calcPrice()}. 10% service fee`
@@ -55,7 +56,7 @@ class UserPrice extends React.Component {
                 "Not less than the minimum price of the book"
               )
           }
-        </span>
+        </div>
       </div>
     )
   }
@@ -70,17 +71,3 @@ UserPrice.defaultValue = {
 }
 
 export default UserPrice
-
-const styles = {
-  userPrice: {
-    paddingTop: "1em",
-  },
-  title: {
-    paddingRight: "0.2em",
-  },
-  notify: {
-    paddingLeft: "0.5em",
-    fontSize: "10px",
-    color: "red",
-  },
-}

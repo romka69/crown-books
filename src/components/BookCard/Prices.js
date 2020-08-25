@@ -8,15 +8,27 @@ const Prices = ({ pricesProps }) => {
   const { MinPrice, DesiredPrice, CurrentSum, ExpectedPrice } = pricesProps
 
   return (
-    <div style={styles.prices}>
-      <Price label="Minimal price" val={MinPrice} />
-
-      <Price label="Desired price" val={DesiredPrice} />
-
-      <Price label="Current sum" val={CurrentSum} />
-
-      <Price label="Expected price" val={ExpectedPrice} />
-    </div >
+    <>
+      <hr className="mt-3" />
+      <div className="flex justify-between mt-3 text-md font-semibold">
+        <div className="w-1/2 md:w-full md:flex justify-between">
+          <div className="w-full">
+            <Price label="Minimal price" val={MinPrice} />
+          </div>
+          <div className="w-full mt-3 md:mt-0">
+            <Price label="Desired price" val={DesiredPrice} />
+          </div>
+        </div>
+        <div className="w-1/2 md:w-full md:flex justify-between">
+          <div className="w-full">
+            <Price label="Current sum" val={CurrentSum} />
+          </div>
+          <div className="w-full mt-3 md:mt-0">
+            <Price label="Expected price" val={ExpectedPrice} />
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 
@@ -25,13 +37,3 @@ Prices.propTypes = {
 }
 
 export default Prices
-
-const styles = {
-  prices: {
-    paddingTop: "30px",
-    display: "flex",
-    marginTop: "10px",
-    fontSize: "16px",
-    fontWeight: "600",
-  },
-}

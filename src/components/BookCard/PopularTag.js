@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 const PopularTag = ({ feeds }) => {
   if (Number.parseInt(feeds) > 20)
     return (
-      <div style={styles.popular}>
+      <div className="font-semibold text-sm text-accent">
         Popular
       </div>
     )
@@ -22,11 +22,3 @@ PopularTag.defaultProps = {
 }
 
 export default PopularTag
-
-const styles = {
-  popular: {
-    fontWeight: "600",
-    fontSize: "14px",
-    color: "gray",
-  },
-}

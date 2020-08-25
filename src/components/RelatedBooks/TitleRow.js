@@ -2,17 +2,8 @@ import React from "react"
 
 const TitleRow = ({ children }) => {
   return (
-    <h5 style={styles.title}>{children}</h5>
+    <h5 className="h5 text-md text-center">{children}</h5>
   )
 }
 
 export default TitleRow
-
-const styles = {
-  title: {
-    fontSize: "14px",
-    marginTop: "5px",
-    marginBottom: "2px",
-    textAlign: "center",
-  },
-}

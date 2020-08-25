@@ -9,14 +9,15 @@ import CloseButton from "./CloseButton"
 
 const BookCard = React.memo(({ book: { Id, Title, Cover, Author }, removeFromRelated }) => {
   return (
-    <div style={styles.book}>
+    <div className="w-1/3 md:w-1/4 mt-1 ml-5">
       <TitleRow>{Title}</TitleRow>
-
-      <CoverBlock url={Cover} />
-
+      <div className="flex">
+        <CoverBlock url={Cover} />
+        <div className="mt-1 -ml-6">
+          <CloseButton id={Id} removeFromRelated={removeFromRelated} />
+        </div>
+      </div>
       <AuthorBlock author={Author} />
-
-      <CloseButton id={Id} removeFromRelated={removeFromRelated} />
     </div>
   )
 })
@@ -27,10 +28,11 @@ BookCard.propTypes = {
   Author: PropTypes.object,
 }
 
-export default BookCard
-
 const styles = {
-  book: {
-    paddingRight: "1em",
+  button: {
+    position: "relative",
+    top: "-215px",
+    right: "-125px",
   },
 }
+export default BookCard

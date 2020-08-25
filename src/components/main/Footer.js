@@ -4,18 +4,14 @@ import ToggleTheme from "../helpers/ToggleTheme"
 
 const Footer = ({ children }) => {
   return (
-    <footer style={styles.footer}>
-      {children}
+    <>
+      <hr className="mt-5" />
+      <footer className="text-center py-3">
         <ToggleTheme />
-    </footer>
+        {children}
+      </footer>
+    </>
   )
 }
 
 export default Footer;
-
-const styles = {
-  footer: {
-    padding: "0 10%",
-    marginTop: "50px",
-  },
-}

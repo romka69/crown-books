@@ -15,17 +15,27 @@ class DonateModal extends React.Component {
   render () {
     return (
       <>
-        <button onClick={() => this.toogle()}>Donate info</button>
+        <button
+          className="mt-2 md:mt-0 text-center font-bold underline py-2 px-2 text-sm"
+          onClick={() => this.toogle()}
+        >
+          Donate info
+        </button>
         {
           this.state.isOpen && ReactDom.createPortal(
-            <div style={styles.overlay}>
-              <div style={styles.body}>
+            <div className="fixed w-full h-full flex justify-center items-center bg-black bg-opacity-75 inset-0">
+              <div className="p-5 bg-primary text-primary rounded">
                 <ul>
                   <li>Donate $15 and get book</li>
                   <li>Donate $22 and get book with autograph</li>
                   <li>Donate $30+ and get book with autograph with somethings</li>
                 </ul>
-                <button onClick={() => this.toogle()}>Close</button>
+                <button
+                  className="mt-5 text-center shadow bg-secondary text-secondary font-bold py-1 px-2 rounded"
+                  onClick={() => this.toogle()}
+                >
+                  Close
+                </button>
               </div>
             </div>,
             document.getElementById("modal-root")
@@ -37,21 +47,3 @@ class DonateModal extends React.Component {
 }
 
 export default DonateModal
-
-const styles = {
-  overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.95)",
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  body: {
-    backgroundColor: "#fff",
-    padding: "10px",
-  }
-}

@@ -4,11 +4,13 @@ import PropTypes from "prop-types"
 
 const CoverBlock = ({ url }) => {
   return (
-    <div style={styles.bookContainer}>
-      <div style={styles.bookCard}>
-        <img style={styles.bookCover} src={url} alt="" />
-      </div>
-    </div >
+
+    <img
+      className="shadow-xl object-cover w-1/2 md:w-full rounded border-solid border-2 border-gray-200"
+      src={url}
+      alt=""
+    />
+
   )
 }
 
@@ -21,17 +23,3 @@ CoverBlock.defaultProps = {
 }
 
 export default CoverBlock
-
-const styles = {
-  bookCard: {
-    width: "290px",
-    minHeight: "410px",
-    boxShadow: "0 0 20px #aaa",
-    margin: "25px",
-    padding: "10px 10px 0 10px",
-    verticalAlign: "top",
-  },
-  bookCover: {
-    height: "400px",
-  },
-}

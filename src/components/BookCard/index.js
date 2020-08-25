@@ -21,10 +21,12 @@ const BookCard = ({ book }) => {
     return <div>Empty book</div>
 
   return (
-    <div style={styles.bookContainer}>
-      <CoverBlock url={Cover} />
+    <div className="md:flex py-5">
+      <div className="md:w-1/3">
+        <CoverBlock url={Cover} />
+      </div>
 
-      <div style={styles.description}>
+      <div className="md:w-2/3 md:pl-5">
         <Header label={Title} />
 
         <PopularTag feeds={Feeds} />
@@ -56,12 +58,3 @@ BookCard.propTypes = {
 }
 
 export default withLoader(BookCard)
-
-const styles = {
-  bookContainer: {
-    display: "flex",
-  },
-  description: {
-    margin: "25px",
-  },
-}

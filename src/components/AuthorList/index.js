@@ -30,9 +30,13 @@ class AuthorList extends React.Component {
       return <div>Not have authors</div>
 
     return (
-      <div>
-        <div style={styles.action}>
-          <button onClick={() => this.toggle()}>
+      <>
+        <h3 className="h3 mt-5 p-2 font-bold text-lg">Authors of book</h3>
+        <div className="text-right">
+          <button
+            className="font-bold underline text-sm"
+            onClick={() => this.toggle()}
+          >
             Show all Authors
           </button>
         </div>
@@ -43,7 +47,7 @@ class AuthorList extends React.Component {
               <AuthorCard key={author.Id} author={author} />
             ))
         }
-      </div>
+      </>
     )
   }
 }
@@ -53,10 +57,3 @@ AuthorList.propTypes = {
 }
 
 export default withLoader(AuthorList)
-
-const styles = {
-  action: {
-    display: "flex",
-    justifyContent: "flex-end",
-  },
-}

@@ -14,10 +14,12 @@ class AuthorCard extends React.Component {
     const { author: { Name, Email, AvatarURL, Info } } = this.props
 
     return (
-      <div style={styles.authorContainer}>
-        <Summary>{Info}</Summary>
+      <div className="flex pt-6">
+        <div className="w-3/4">
+          <Summary>{Info}</Summary>
+        </div>
 
-        <div style={styles.authorCard}>
+        <div className="w-1/4">
           <Cover url={AvatarURL} />
 
           <NameRow>{Name}</NameRow>
@@ -44,18 +46,3 @@ AuthorCard.defaultProps = {
 }
 
 export default AuthorCard
-
-const styles = {
-  authorContainer: {
-    paddingTop: "20px",
-    display: "flex",
-  },
-  authorCard: {
-    width: "168px",
-    minHeight: "320px",
-    boxShadow: "0 0 20px #aaa",
-    margin: "25px",
-    padding: "10px 10px 0 10px",
-    verticalAlign: "top",
-  },
-}

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 const Summary = ({ text }) => {
   return (
-    <div style={styles.annotation}>{text}</div>
+    <div className="mt-3">{text}</div>
   )
 }
 
@@ -17,9 +17,3 @@ Summary.defaultProps = {
 }
 
 export default Summary
-
-const styles = {
-  annotation: {
-    marginTop: "10px",
-  },
-}

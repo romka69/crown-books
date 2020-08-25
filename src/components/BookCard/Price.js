@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 const Price = ({ label, val }) => {
   return (
-    <div style={styles.price}>
+    <div>
       <div>{label}</div>
       <div>${val}</div>
     </div>
@@ -22,10 +22,3 @@ Price.defaultProps = {
 }
 
 export default Price
-
-const styles = {
-  price: {
-    flex: "0 0 25%",
-    maxWidth: "25%",
-  },
-}

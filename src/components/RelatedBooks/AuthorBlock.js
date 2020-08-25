@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 const AuthorBlock = ({ author: { Name } }) => {
   return (
-    <div style={styles.author}>
+    <div className="text-center font-bold text-sm md:text-lg">
       {Name}
     </div>
   )
@@ -19,10 +19,3 @@ AuthorBlock.defaultValue = {
 }
 
 export default AuthorBlock
-
-const styles = {
-  author: {
-    fontWeight: "bold",
-    fontSize: "13px",
-  },
-}

@@ -16,17 +16,16 @@ class App extends React.Component {
       <ThemeProvider>
         <Header>Crown-Books</Header>
 
-        <div style={styles.main} >
-          <BookContainer />
-
-          <Form />
+        <div className="text-primary bg-primary">
+          <div className="max-w-screen-lg my-0 mx-auto px-3 xl:px-0" >
+            <BookContainer />
+            <Form />
+          </div>
+          <Footer>
+            <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
+            <div>Training project from TN. <a href="https://github.com/romka69/crown-books" target="_blank">GitHub</a></div>
+          </Footer>
         </div>
-
-        <Footer>
-          <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
-          <div>Training project from TN. <a href="https://github.com/romka69/crown-books" target="_blank">GitHub</a></div>
-        </Footer>
-
         <ButtonScrollToTop />
       </ThemeProvider>
     )
@@ -40,10 +39,3 @@ App.propTypes = {
 }
 
 export default App;
-
-const styles = {
-  main: {
-    margin: "0 auto",
-    maxWidth: "910px",
-  },
-}

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 
 const Header = ({ label }) => {
   return (
-    <div style={styles.title}>{label}</div>
+    <h1 className="mt-3 md:mt-0 mb-3 h1 font-extrabold text-2xl">{label}</h1>
   )
 }
 
@@ -17,11 +17,3 @@ Header.defaultProps = {
 }
 
 export default Header
-
-const styles = {
-  title: {
-    fontWeight: "800",
-    fontSize: "25px",
-    marginBottom: "15px",
-  },
-}

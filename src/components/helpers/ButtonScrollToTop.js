@@ -47,11 +47,15 @@ class ButtonScrollToTop extends React.Component {
     const { isVisible } = this.state
 
     return (
-      <div>
+      <div className="">
         {
           isVisible && (
-            <div style={styles.btn} onClick={() => this.scrollToTop()}>
-              <p>^</p>
+            <div
+              className="flex items-center cursor-pointer fixed font-bold text-lg text-white bg-black rounded-full h-12 w-12"
+              style={styles.position}
+              onClick={() => this.scrollToTop()}
+            >
+              <div className="flex-1 text-center">^</div>
             </div>
           )
         }
@@ -63,18 +67,8 @@ class ButtonScrollToTop extends React.Component {
 export default ButtonScrollToTop
 
 const styles = {
-  btn: {
-    cursor: "pointer",
-    position: "fixed",
-    right: "10px",
+  position: {
+    right: "15px",
     bottom: "30px",
-    width: "45px",
-    height: "45px",
-    fontSize: "18px",
-    fontWeight: "bold",
-    color: "white",
-    backgroundColor: "black",
-    textAlign: "center",
-    borderRadius: "50%",
-  },
+  }
 }

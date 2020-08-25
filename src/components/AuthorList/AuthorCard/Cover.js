@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 
 const Cover = ({ url }) => {
   return (
-    <div style={styles.cover}>
-      <img style={styles.imageCover} src={url} alt="" />
+    <div className="flex justify-center">
+      <img className="cover rounded border-solid border-2" src={url} alt="" />
     </div>
   )
 }
@@ -19,14 +19,3 @@ Cover.defaultProps = {
 }
 
 export default Cover
-
-const styles = {
-  cover: {
-    border: "2px solid gray",
-    height: "230px",
-    overflow: "hidden",
-  },
-  imageCover: {
-    height: "230px",
-  },
-}

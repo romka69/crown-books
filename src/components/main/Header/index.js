@@ -2,27 +2,13 @@ import React from "react"
 
 import UserInfo from "./UserInfo"
 
-
 const Header = ({ children }) => {
   return (
-    <header style={styles.header}>
+    <header className="flex justify-between items-center font-bold bg-gray-900 text-white py-2 px-5">
       {children}
-
       <UserInfo />
     </header>
   )
 }
 
 export default Header;
-
-const styles = {
-  header: {
-    backgroundColor: "#222222",
-    color: "#fff",
-    minHeight: "60px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontWeight: "bold",
-  },
-}

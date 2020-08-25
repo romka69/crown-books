@@ -34,7 +34,7 @@ class RelatedBooks extends React.Component {
       <>
         <Header>Related books</Header>
 
-        <div style={styles.books}>
+        <div className="flex justify-center">
           {
             items.map(item => (
               <BookCard
@@ -55,9 +55,3 @@ RelatedBooks.propTypes = {
 }
 
 export default withLoader(RelatedBooks)
-
-const styles = {
-  books: {
-    display: "flex",
-  },
-}
