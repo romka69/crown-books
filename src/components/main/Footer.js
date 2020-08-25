@@ -1,9 +1,12 @@
 import React from "react"
 
+import ToggleTheme from "../helpers/ToggleTheme"
+
 const Footer = ({ children }) => {
   return (
     <footer style={styles.footer}>
       {children}
+        <ToggleTheme />
     </footer>
   )
 }

@@ -1,7 +1,6 @@
 import React from "react"
 
 import UserInfo from "./UserInfo"
-import ToggleTheme from "../../helpers/ToggleTheme"
 
 
 const Header = ({ children }) => {
@@ -10,7 +9,6 @@ const Header = ({ children }) => {
       {children}
 
       <UserInfo />
-      <ToggleTheme />
     </header>
   )
 }
