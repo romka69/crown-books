@@ -26,9 +26,9 @@ const BookCard = ({ book }) => {
         <CoverBlock url={Cover} />
       </div>
       <div className="md:w-2/3 md:pl-5">
-        <Header label={Title} />
+        <Header>{Title}</Header>
         <PopularTag feeds={Feeds} />
-        <Summary text={Annotation} />
+        <Summary>{Annotation}</Summary>
         <Details detailsProps={{ Pages, Language, ProgressPercent, Feeds }} />
         <Prices pricesProps={{ MinPrice, DesiredPrice, CurrentSum, ExpectedPrice }} />
         <UserPrice minPrice={MinPrice} />

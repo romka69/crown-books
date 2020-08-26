@@ -2,7 +2,6 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import Wrapper from "./Wrapper"
 import Price from "./Price"
 
 const Prices = ({ pricesProps }) => {
@@ -13,32 +12,28 @@ const Prices = ({ pricesProps }) => {
       <hr className="mt-3" />
       <div className="flex justify-between mt-3 text-md font-semibold">
         <Wrapper>
-          <div className="w-full">
-            <Price
-              label="Minimal price"
-              val={MinPrice}
-            />
-          </div>
-          <div className="w-full mt-3 md:mt-0">
-            <Price
-              label="Desired price"
-              val={DesiredPrice}
-            />
-          </div>
+          <Price
+            label="Minimal price"
+            val={MinPrice}
+            className="w-full"
+          />
+          <Price
+            label="Desired price"
+            val={DesiredPrice}
+            className="w-full mt-3 md:mt-0"
+          />
         </Wrapper>
         <Wrapper>
-          <div className="w-full">
-            <Price
-              label="Current sum"
-              val={CurrentSum}
-            />
-          </div>
-          <div className="w-full mt-3 md:mt-0">
-            <Price
-              label="Expected price"
-              val={ExpectedPrice}
-            />
-          </div>
+          <Price
+            label="Current sum"
+            val={CurrentSum}
+            className="w-full"
+          />
+          <Price
+            label="Expected price"
+            val={ExpectedPrice}
+            className="w-full mt-3 md:mt-0"
+          />
         </Wrapper>
       </div>
     </>
@@ -50,3 +45,9 @@ Prices.propTypes = {
 }
 
 export default Prices
+
+const Wrapper = ({ children }) => (
+  <div className="w-1/2 md:w-full md:flex justify-between">
+    {children}
+  </div>
+)

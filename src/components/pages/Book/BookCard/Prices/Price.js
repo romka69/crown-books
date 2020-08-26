@@ -2,12 +2,12 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-const Price = ({ label, val }) => {
+const Price = ({ label, val, className }) => {
   return (
-    <>
+    <div className={className}>
       <div>{label}</div>
       <div>${val}</div>
-    </>
+    </div>
   )
 }
 

@@ -1,7 +1,6 @@
 import React from "react"
 
 import Header from "./Header"
-import Wrapper from "./Wrapper"
 import Field from "./Field"
 import Actions from "./Actions"
 
@@ -70,3 +69,9 @@ class Form extends React.Component {
 }
 
 export default Form
+
+const Wrapper = ({ children }) => (
+  <div className="flex flex-wrap -mx-3 md:mb-2">
+    {children}
+  </div>
+)

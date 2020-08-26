@@ -3,7 +3,6 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./Header"
-import Wrapper from "./Wrapper"
 import BookCard from "./BookCard"
 
 import withLoader from "../../../shared/HOC/withLoader"
@@ -55,3 +54,9 @@ RelatedBooks.propTypes = {
 }
 
 export default withLoader(RelatedBooks)
+
+const Wrapper = ({ children }) => (
+  <div className="flex justify-evenly">
+    {children}
+  </div>
+)

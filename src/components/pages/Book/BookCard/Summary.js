@@ -2,20 +2,20 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-const Summary = ({ text }) => {
+const Summary = ({ children }) => {
   return (
     <div className="mt-3">
-      {text}
+      {children}
     </div>
   )
 }
 
 Summary.propTypes = {
-  text: PropTypes.string,
+  children: PropTypes.string,
 }
 
 Summary.defaultProps = {
-  text: "Empty annotation",
+  children: "Empty annotation",
 }
 
 export default Summary
