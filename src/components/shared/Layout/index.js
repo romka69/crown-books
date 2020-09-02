@@ -3,9 +3,12 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 
 import Header from "./Header"
 import Book from "../../pages/Book"
+import Books from "../../pages/Books"
 import NotFound from "../../pages/NotFound"
 import Footer from "./Footer"
 import ButtonScrollToTop from "../helpers/ButtonScrollToTop"
+
+import { bookPath } from "../helpers/routes"
 
 const Layout = () => {
   return (
@@ -14,7 +17,17 @@ const Layout = () => {
       <Wrapper>
         <Main>
           <Switch>
-            <Route component={Book} path="/" exact />
+            <Route
+              component={Books}
+              path="/"
+              exact
+            />
+            <Route
+              component={Book}
+              path={bookPath()}
+              strict
+              exact
+            />
             <Route component={NotFound} />
           </Switch>
         </Main>

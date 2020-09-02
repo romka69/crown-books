@@ -7,8 +7,8 @@ import Form from "./FeedBackForm"
 
 import useBook from "../../shared/hooks/useBook"
 
-const BookContainer = () => {
-  const { book, authorsData, relatedBooks } = useBook("rechou1YPRb0takuM")
+const BookContainer = ({ match: { params } }) => {
+  const { book, authorsData, relatedBooks } = useBook(params.id)
 
   return (
     <>
