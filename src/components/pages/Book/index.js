@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 
 import BookCard from "./BookCard"
 import RelatedBooks from "./RelatedBooks"
@@ -12,6 +13,9 @@ const BookContainer = ({ match: { params } }) => {
 
   return (
     <>
+      <Helmet>
+        <title>{book ? `${book.Title} | Crown-Books` : "Loading..."}</title>
+      </Helmet>
       <BookCard
         isLoading={[!book, "Book"]}
         book={book}

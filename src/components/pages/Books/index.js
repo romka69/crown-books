@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 
 import useBooks from "../../shared/hooks/useBooks"
 
@@ -10,6 +11,9 @@ const BookContainer = () => {
 
   return (
     <>
+      <Helmet>
+        <title>All Books | Crown-Books</title>
+      </Helmet>
       <Header>Books</Header>
       <BookList
         isLoading={[!books, "Books"]}
