@@ -10,7 +10,7 @@ import ButtonScrollToTop from "../helpers/ButtonScrollToTop"
 const Layout = () => {
   return (
     <Router>
-      <Header>Crown-Books</Header>
+      <Header><Link to="/">Crown-Books</Link></Header>
       <Wrapper>
         <Main>
           <Switch>
