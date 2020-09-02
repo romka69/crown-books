@@ -10,7 +10,7 @@ import AuthorBlock from "./AuthorBlock"
 
 import { bookPath } from "../../shared/helpers/routes"
 
-const Book = React.memo(({ book: { Id, Title, Annotation, Cover, Author } }) => {
+const Book = ({ book: { Id, Title, Annotation, Cover, Author } }) => {
   return (
     <WrapperCard>
       <CoverBlock url={Cover} title={Title} />
@@ -25,7 +25,7 @@ const Book = React.memo(({ book: { Id, Title, Annotation, Cover, Author } }) => 
       </WrapperText>
     </WrapperCard>
   )
-})
+}
 
 Book.propTypes = {
   Id: PropTypes.number,
@@ -36,7 +36,7 @@ Book.propTypes = {
 export default Book
 
 const WrapperCard = ({ children }) => (
-  <div className="shadow-lg mx-auto max-w-sm sm:max-w-full w-full sm:flex mb-5">
+  <div className="shadow-lg mx-auto max-w-sm sm:max-w-full w-full sm:flex mb-8">
     {children}
   </div>
 )
