@@ -1,11 +1,10 @@
 import ReactDom from "react-dom"
 import React from "react"
 
+import AuthProvider from "./components/shared/providers/AuthProvider"
 import App from './App'
 
-import "./index.css"
-
-import AuthProvider from "./components/providers/AuthProvider"
+import "./css/app.css"
 
 ReactDom.render(
   <AuthProvider>

@@ -2,31 +2,25 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import Header from "./components/main/Header"
-import BookContainer from "./components/BookCard/BookContainer"
-import Form from "./components/Form"
-import Footer from "./components/main/Footer"
-import ButtonScrollToTop from "./components/helpers/ButtonScrollToTop"
+import ThemeProvider from "./components/shared/providers/ThemeProvider"
+
+import Layout from "./components/shared/Layout"
+import Book from "./components/pages/Book"
+import Form from "./components/pages/Book/FeedBackForm"
+import ButtonScrollToTop from "./components/shared/helpers/ButtonScrollToTop"
 
 class App extends React.Component {
   render () {
     return (
-      <>
-        <Header>Crown-Books</Header>
-
-        <div style={styles.main} >
-          <BookContainer />
-
-          <Form />
-        </div>
-
-        <Footer>
-          <div>&copy; Books crowdfunding, {new Date().getFullYear()}</div>
-          <div>Training project from TN. <a href="https://github.com/romka69/crown-books" target="_blank">GitHub</a></div>
-        </Footer>
-
+      <ThemeProvider>
+        <Layout>
+          <Main>
+            <Book />
+            <Form />
+          </Main>
+        </Layout>
         <ButtonScrollToTop />
-      </>
+      </ThemeProvider>
     )
   }
 }
@@ -39,9 +33,8 @@ App.propTypes = {
 
 export default App;
 
-const styles = {
-  main: {
-    margin: "0 auto",
-    maxWidth: "910px",
-  },
-}
+const Main = ({ children }) => (
+  <div className="max-w-screen-lg my-0 mx-auto px-3 xl:px-0">
+    {children}
+  </div>
+)
