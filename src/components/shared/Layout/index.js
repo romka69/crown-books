@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
 
 import Header from "./Header"
 import Book from "../../pages/Book"
+import NotFound from "../../pages/NotFound"
 import Footer from "./Footer"
 import ButtonScrollToTop from "../helpers/ButtonScrollToTop"
 
@@ -14,6 +15,7 @@ const Layout = () => {
         <Main>
           <Switch>
             <Route component={Book} path="/" exact />
+            <Route component={NotFound} />
           </Switch>
         </Main>
         <Footer>
