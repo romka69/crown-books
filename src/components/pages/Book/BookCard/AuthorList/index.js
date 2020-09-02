@@ -34,15 +34,20 @@ class AuthorList extends React.Component {
         <h3 className="h3 mt-10 p-2 font-bold text-xl">
           Authors of book
         </h3>
-        <div className="text-right">
-          <button
-            className="font-bold underline text-sm"
-            onClick={() => this.toggle()}
-          >
-            Show all Authors
-          </button>
-        </div>
-
+        {
+          (this.props.authors.length < 3) ? (
+            ""
+          ) : (
+              <div className="text-right">
+                <button
+                  className="font-bold underline text-sm"
+                  onClick={() => this.toggle()}
+                >
+                  Show all Authors
+              </button>
+              </div>
+            )
+        }
         {
           this.sliceAuthors()
             .map(author => (
