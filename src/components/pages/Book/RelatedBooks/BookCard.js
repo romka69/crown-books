@@ -14,12 +14,11 @@ import { bookPath } from "../../../shared/helpers/routes"
 const BookCard = React.memo(({ book: { Id, Title, Cover, Author }, removeFromRelated }) => {
   return (
     <div className="w-1/3 md:w-1/4 mt-1 px-3">
-      <TitleRow>{truncate(Title, 14)}</TitleRow>
-      {/* <TitleRow>
+      <TitleRow>
         <Link to={bookPath(Id)}>
           {truncate(Title, 14)}
         </Link>
-      </TitleRow> */}
+      </TitleRow>
       <AuthorBlock author={Author} />
       <div className="flex">
         <CoverBlock url={Cover} />
