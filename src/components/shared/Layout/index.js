@@ -1,42 +1,24 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import Header from "./Header"
-import Books from "../../pages/Books"
-import Book from "../../pages/Book"
-import NotFound from "../../pages/NotFound"
 import Footer from "./Footer"
 import ButtonScrollToTop from "../helpers/ButtonScrollToTop"
 
-import { bookPath } from "../helpers/routes"
-
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <Router>
+    <>
       <Header><Link to="/">Crown-Books</Link></Header>
       <Wrapper>
         <Main>
-          <Switch>
-            <Route
-              component={Books}
-              path="/"
-              exact
-            />
-            <Route
-              component={Book}
-              path={bookPath()}
-              strict
-              exact
-            />
-            <Route component={NotFound} />
-          </Switch>
+          {children}
         </Main>
         <Footer>
           &copy; Books crowdfunding, {new Date().getFullYear()}
         </Footer>
         <ButtonScrollToTop />
       </Wrapper>
-    </Router>
+    </>
   )
 }
 
