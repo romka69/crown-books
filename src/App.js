@@ -5,10 +5,11 @@ import ThemeProvider from "./components/shared/providers/ThemeProvider"
 
 import Layout from "./components/shared/Layout"
 import Books from "./components/pages/Books"
+import NewBook from "./components/pages/NewBook"
 import Book from "./components/pages/Book"
 import NotFound from "./components/pages/NotFound"
 
-import { bookPath } from "./components/shared/helpers/routes"
+import { newBookPath, bookPath } from "./components/shared/helpers/routes"
 
 class App extends React.Component {
   render () {
@@ -20,6 +21,12 @@ class App extends React.Component {
               <Route
                 component={Books}
                 path="/"
+                exact
+              />
+              <Route
+                component={NewBook}
+                path={newBookPath()}
+                strict
                 exact
               />
               <Route
