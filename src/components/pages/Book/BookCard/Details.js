@@ -11,7 +11,7 @@ const Details = ({ detailsProps }) => {
     <>
       <Row>Pages: {Pages}</Row>
       <Row>Language: {Language}</Row>
-      <Row>Book done is: {ProgressPercent}</Row>
+      <Row>Book done is: {ProgressPercent}%</Row>
       <Row>Feeds: {Feeds}</Row>
     </>
   )
