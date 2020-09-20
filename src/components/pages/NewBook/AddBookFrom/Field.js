@@ -1,6 +1,6 @@
 import React from "react"
 
-const Field = ({ wrapperClass, placeholder, type, name, className, register, ...inputProps }) => {
+const Field = ({ errors, wrapperClass, placeholder, type, name, className, register, ...inputProps }) => {
   const Component = type === "textarea" ? "textarea" : "input"
 
   return (
@@ -15,6 +15,7 @@ const Field = ({ wrapperClass, placeholder, type, name, className, register, ...
         ref={register}
         {...inputProps}
       />
+      {errors[name] && <span className="text-red-600">{errors[name].message}</span>}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from "react"
-
 import { useForm } from "react-hook-form"
 import { useHistory } from "react-router-dom"
+import { yupResolver } from "@hookform/resolvers"
 
 import Header from "./Header"
 import Field from "./Field"
@@ -10,15 +10,22 @@ import Actions from "./Actions"
 
 import { createBook } from "../../../../data/createData"
 import { bookPath } from "../../../shared/helpers/routes"
+import { schema } from "../../../../data/schemas/validateFieldsBook"
 
 const AddBookForm = () => {
-  const { register, handleSubmit } = useForm()
+  const { errors, register, handleSubmit, formState: { isSubmitting } } = useForm({ resolver: yupResolver(schema) })
   const history = useHistory()
 
   const onSubmit = (fields) => {
     console.log(fields)
     return createBook({
       ...fields,
+      Cover: [
+        { url: fields.Cover }
+      ],
+      Authors: [
+        fields.Authors
+      ],
       Pages: parseFloat(fields.Pages),
       Feeds: parseFloat(fields.Feeds),
       MinPrice: parseFloat(fields.MinPrice),
@@ -45,12 +52,14 @@ const AddBookForm = () => {
         className="w-full max-w-xl rounded border py-5 border-solid"
       >
         <Field
+          errors={errors}
           placeholder="Title"
           name="Title"
           wrapperClass="sm:w-full"
           register={register}
         />
         <Field
+          errors={errors}
           className="resize-y"
           placeholder="Annotation"
           name="Annotation"
@@ -60,25 +69,28 @@ const AddBookForm = () => {
         />
         <Wrapper>
           <Field
+            errors={errors}
             placeholder="Pages"
             name="Pages"
             register={register}
             type="number"
           />
           <Field
+            errors={errors}
             placeholder="Language"
             name="Language"
             register={register}
-            defaultValue="English"
           />
         </Wrapper>
         <Wrapper>
           <Field
+            errors={errors}
             placeholder="Book progress"
             name="ProgressPercent"
             register={register}
           />
           <Field
+            errors={errors}
             placeholder="Feeds"
             name="Feeds"
             register={register}
@@ -86,19 +98,22 @@ const AddBookForm = () => {
           />
         </Wrapper>
         <Field
+          errors={errors}
           placeholder="Cover"
-          name="Cover[0].url"
+          name="Cover"
           wrapperClass="sm:w-full"
           register={register}
         />
         <Wrapper>
           <Field
+            errors={errors}
             placeholder="Minimal price"
             name="MinPrice"
             type="number"
             register={register}
           />
           <Field
+            errors={errors}
             placeholder="Desired price"
             name="DesiredPrice"
             type="number"
@@ -107,12 +122,14 @@ const AddBookForm = () => {
         </Wrapper>
         <Wrapper>
           <Field
+            errors={errors}
             placeholder="Current sum"
             name="CurrentSum"
             type="number"
             register={register}
           />
           <Field
+            errors={errors}
             placeholder="Expected price"
             name="ExpectedPrice"
             type="number"
@@ -120,10 +137,15 @@ const AddBookForm = () => {
           />
         </Wrapper>
         <SelectAuthor
-          name="Authors[0]"
+          errors={errors}
+          name="Authors"
           register={register}
         />
-        <Actions />
+        <Actions
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </Actions>
       </form>
     </>
   )

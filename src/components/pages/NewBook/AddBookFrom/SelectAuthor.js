@@ -1,6 +1,6 @@
 import React from "react"
 
-const Select = ({ register, ...inputProps }) => {
+const Select = ({ errors, register, ...inputProps }) => {
   return (
     <div
       className="w-full px-3 mb-6"
@@ -13,6 +13,7 @@ const Select = ({ register, ...inputProps }) => {
         <option value="recpCnRph69uTl4GJ">Author 1</option>
         <option value="recfhKriS4CftQGCJ">Author 2</option>
       </select>
+      {errors && errors[inputProps.name] && <span className="text-red-600">{errors[inputProps.name].message}</span>}
     </div >
   )
 }
