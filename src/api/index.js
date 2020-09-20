@@ -11,6 +11,7 @@ const backend = {
   books: {
     index: (params) => adapter.get("/Books", params),
     show: (id) => adapter.get(`/Books/${id}`),
+    create: (params) => adapter.post("/Books", params)
   },
   authors: {
     index: (params) => adapter.get("/Authors", params),
