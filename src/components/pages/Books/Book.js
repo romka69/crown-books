@@ -48,7 +48,7 @@ const WrapperText = ({ children }) => (
 )
 
 const WrapperTitleAnnotation = ({ children }) => (
-  <div>
+  <div className="mb-5">
     {children}
   </div>
 )
