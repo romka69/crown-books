@@ -23,7 +23,7 @@ const useBook = (bookId) => {
         setAuthorsData(authorsData)
       })
     })
-  }, [])
+  }, [bookId])
 
   return { book, relatedBooks, authorsData }
 }

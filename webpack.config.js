@@ -12,6 +12,7 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 3000,
+    historyApiFallback: true
   },
   output: {
     filename: "[name].js",
@@ -32,6 +33,7 @@ module.exports = {
     new Dotenv(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      base: "/"
     }),
     new MiniCssExtractPlugin(),
   ],

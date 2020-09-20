@@ -18,6 +18,14 @@ function fetchBooks (ids) {
   )
 }
 
+function fetchAllBooks (params) {
+  return backend.books.index(params)
+    .then(({ data }) => prepareBooks(data))
+    .then(data => {
+      return data
+    })
+}
+
 function fetchAuthorById (id) {
   return backend.authors.show(id)
     .then(({ data }) => prepareAuthor(data))
@@ -61,6 +69,16 @@ function prepareBook (data) {
   }
 }
 
+function prepareBooks (data) {
+  let books = []
+
+  data.records.map(record => {
+    books.push(prepareBook(record))
+  })
+
+  return books
+}
+
 function prepareAuthor (data) {
   return {
     Id: data.id,
@@ -71,4 +89,4 @@ function prepareAuthor (data) {
   }
 }
 
-export { fetchBookById, fetchBooks, fetchAuthors }
+export { fetchBookById, fetchBooks, fetchAllBooks, fetchAuthors }

@@ -21,7 +21,7 @@ const BookCard = ({ book }) => {
     return <div>Empty book</div>
 
   return (
-    <div className="md:flex py-5">
+    <div className="md:flex py-10">
       <div className="md:w-1/3">
         <CoverBlock url={Cover} />
       </div>
