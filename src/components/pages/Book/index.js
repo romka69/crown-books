@@ -20,10 +20,14 @@ const BookContainer = ({ match: { params } }) => {
         isLoading={[!book, "Book"]}
         book={book}
       />
-      <RelatedBooks
-        isLoading={[!relatedBooks, "Related books"]}
-        books={relatedBooks}
-      />
+      {
+        relatedBooks && (
+          <RelatedBooks
+            isLoading={[!relatedBooks, "Related books"]}
+            books={relatedBooks}
+          />
+        )
+      }
       <AuthorList
         isLoading={[!authorsData, "Authors"]}
         authors={authorsData}
