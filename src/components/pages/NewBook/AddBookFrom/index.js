@@ -11,17 +11,21 @@ import Actions from "./Actions"
 import { createBook } from "../../../../data/createData"
 import { bookPath } from "../../../shared/helpers/routes"
 import { schema } from "../../../../data/schemas/validateFieldsBook"
+import { uploadFile } from "../../../../api/filestack"
 
 const AddBookForm = () => {
   const { errors, register, handleSubmit, formState: { isSubmitting } } = useForm({ resolver: yupResolver(schema) })
   const history = useHistory()
 
-  const onSubmit = (fields) => {
-    console.log(fields)
-    return createBook({
+  const onSubmit = async ({ Cover, ...fields }) => {
+    const formData = new FormData()
+    formData.append("fileUpload", Cover[0])
+    const upploadResult = await uploadFile(formData)
+
+    const res = await createBook({
       ...fields,
       Cover: [
-        { url: fields.Cover }
+        { url: upploadResult.url }
       ],
       Authors: [
         fields.Authors
@@ -31,15 +35,13 @@ const AddBookForm = () => {
       MinPrice: parseFloat(fields.MinPrice),
       DesiredPrice: parseFloat(fields.DesiredPrice),
       CurrentSum: parseFloat(fields.CurrentSum),
-      ExpectedPrice: parseFloat(fields.ExpectedPrice),
+      ExpectedPrice: parseFloat(fields.ExpectedPrice)
     })
-      .then((res) => {
-        const bookId = res.records[0].id
-        const redirectURI = bookPath(bookId)
 
-        history.push(redirectURI)
-        console.log(res)
-      })
+    const productid = res.records[0].id
+    const redirectURI = bookPath(productid)
+
+    history.push(redirectURI)
   }
 
   return (
@@ -101,6 +103,7 @@ const AddBookForm = () => {
           errors={errors}
           placeholder="Cover"
           name="Cover"
+          type="file"
           wrapperClass="sm:w-full"
           register={register}
         />
