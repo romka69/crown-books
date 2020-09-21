@@ -13,7 +13,7 @@ import { bookPath } from "../../../shared/helpers/routes"
 import { schema } from "../../../../data/schemas/validateFieldsBook"
 import { uploadFile } from "../../../../api/filestack"
 
-const AddBookForm = () => {
+const AddBookForm = ({ authors }) => {
   const { errors, register, handleSubmit, formState: { isSubmitting } } = useForm({ resolver: yupResolver(schema) })
   const history = useHistory()
 
@@ -140,7 +140,9 @@ const AddBookForm = () => {
           />
         </Wrapper>
         <SelectAuthor
+          isLoading={[!authors, "Authors"]}
           errors={errors}
+          authors={authors}
           name="Authors"
           register={register}
         />
