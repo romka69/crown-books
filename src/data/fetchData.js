@@ -61,7 +61,7 @@ function prepareBook (data) {
     Language: data.fields.Language,
     ProgressPercent: data.fields.ProgressPercent,
     Feeds: data.fields.Feeds,
-    Cover: data.fields.Cover[0].thumbnails.large.url,
+    Cover: data.fields.Cover[0].thumbnails && data.fields.Cover[0].thumbnails.large.url,
     MinPrice: data.fields.MinPrice,
     DesiredPrice: data.fields.DesiredPrice,
     CurrentSum: data.fields.CurrentSum,

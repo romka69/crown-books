@@ -13,7 +13,7 @@ import { bookPath } from "../../shared/helpers/routes"
 const Book = ({ book: { Id, Title, Annotation, Cover, Author } }) => {
   return (
     <WrapperCard>
-      <CoverBlock url={Cover} title={Title} />
+      {Cover && <CoverBlock url={Cover} title={Title} />}
       <WrapperText>
         <WrapperTitleAnnotation>
           <TitleRow>

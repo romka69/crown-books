@@ -23,7 +23,7 @@ const BookCard = ({ book }) => {
   return (
     <div className="md:flex py-10">
       <div className="md:w-1/3">
-        <CoverBlock url={Cover} />
+        {Cover && <CoverBlock url={Cover} />}
       </div>
       <div className="md:w-2/3 md:pl-5">
         <Header>{Title}</Header>
