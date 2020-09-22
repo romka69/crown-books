@@ -90,6 +90,7 @@ const AddBookForm = ({ authors }) => {
             placeholder="Book progress"
             name="ProgressPercent"
             register={register}
+            type="number"
           />
           <Field
             errors={errors}

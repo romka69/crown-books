@@ -2,7 +2,7 @@ import React from "react"
 
 import withLoader from "../../../shared/HOC/withLoader"
 
-class Select extends React.Component {
+class SelectAuthor extends React.Component {
   constructor(props) {
     super(props)
 
@@ -41,4 +41,4 @@ class Select extends React.Component {
   }
 }
 
-export default withLoader(Select)
+export default withLoader(SelectAuthor)
