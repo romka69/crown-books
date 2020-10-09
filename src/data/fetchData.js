@@ -34,6 +34,14 @@ function fetchAuthorById (id) {
     })
 }
 
+function fetchAllAuthors (params) {
+  return backend.authors.index(params)
+    .then(({ data }) => prepareAuthors(data))
+    .then(data => {
+      return data
+    })
+}
+
 function fetchAuthors (ids) {
   return Promise.all(
     ids.map(
@@ -53,7 +61,7 @@ function prepareBook (data) {
     Language: data.fields.Language,
     ProgressPercent: data.fields.ProgressPercent,
     Feeds: data.fields.Feeds,
-    Cover: data.fields.Cover[0].thumbnails.large.url,
+    Cover: data.fields.Cover[0].thumbnails && data.fields.Cover[0].thumbnails.large.url,
     MinPrice: data.fields.MinPrice,
     DesiredPrice: data.fields.DesiredPrice,
     CurrentSum: data.fields.CurrentSum,
@@ -89,4 +97,14 @@ function prepareAuthor (data) {
   }
 }
 
-export { fetchBookById, fetchBooks, fetchAllBooks, fetchAuthors }
+function prepareAuthors (data) {
+  let authors = []
+
+  data.records.map(record => {
+    authors.push(prepareAuthor(record))
+  })
+
+  return authors
+}
+
+export { fetchBookById, fetchBooks, fetchAllBooks, fetchAuthors, fetchAllAuthors }

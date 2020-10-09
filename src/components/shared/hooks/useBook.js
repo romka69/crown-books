@@ -15,9 +15,13 @@ const useBook = (bookId) => {
     fetchBookById(bookId).then(book => {
       setBook(book)
 
-      fetchBooks(book.RelatedBooks).then(relatedBooks => {
-        setRelatedBooks(relatedBooks)
-      })
+      if (book.RelatedBooks) {
+        fetchBooks(book.RelatedBooks).then(relatedBooks => {
+          setRelatedBooks(relatedBooks)
+        })
+      } else {
+        setRelatedBooks(null)
+      }
 
       fetchAuthors(book.Authors).then(authorsData => {
         setAuthorsData(authorsData)

@@ -3,7 +3,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const PopularTag = ({ feeds }) => {
-  if (Number.parseInt(feeds) > 20)
+  if (feeds > 20)
     return (
       <div className="font-semibold text-sm text-accent">
         Popular
@@ -14,11 +14,11 @@ const PopularTag = ({ feeds }) => {
 }
 
 PopularTag.propTypes = {
-  feeds: PropTypes.string,
+  feeds: PropTypes.number,
 }
 
 PopularTag.defaultProps = {
-  feeds: "Empty feeds",
+  feeds: 0,
 }
 
 export default PopularTag
