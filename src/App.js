@@ -1,5 +1,6 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { Router, Route, Switch } from "react-router-dom"
+import { createBrowserHistory } from 'history'
 
 import ThemeProvider from "./components/shared/providers/ThemeProvider"
 
@@ -11,37 +12,39 @@ import NotFound from "./components/pages/NotFound"
 
 import { newBookPath, bookPath } from "./components/shared/helpers/routes"
 
-class App extends React.Component {
-  render () {
-    return (
-      <ThemeProvider>
-        <Router>
-          <Layout>
-            <Switch>
-              <Route
-                component={Books}
-                path="/"
-                exact
-              />
-              <Route
-                component={NewBook}
-                path={newBookPath()}
-                strict
-                exact
-              />
-              <Route
-                component={Book}
-                path={bookPath()}
-                strict
-                exact
-              />
-              <Route component={NotFound} />
-            </Switch>
-          </Layout>
-        </Router>
-      </ThemeProvider>
-    )
-  }
+const browserHistory = createBrowserHistory()
+
+const App = (props) => {
+  const history = props.history || browserHistory
+
+  return (
+    <ThemeProvider>
+      <Router history={history}>
+        <Layout>
+          <Switch>
+            <Route
+              component={Books}
+              path="/"
+              exact
+            />
+            <Route
+              component={NewBook}
+              path={newBookPath()}
+              strict
+              exact
+            />
+            <Route
+              component={Book}
+              path={bookPath()}
+              strict
+              exact
+            />
+            <Route component={NotFound} />
+          </Switch>
+        </Layout>
+      </Router>
+    </ThemeProvider>
+  )
 }
 
 export default App;
