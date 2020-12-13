@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -32,6 +33,10 @@ module.exports = {
   plugins: [
     // new BundleAnalyzerPlugin(),
     new Dotenv(),
+    new webpack.EnvironmentPlugin([
+      'REACT_APP_API_TOKEN_AIRTABLE',
+      'REACT_APP_API_TOKEN_FILESTACK'
+    ]),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       base: "/"
